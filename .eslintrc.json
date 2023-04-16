@@ -1,0 +1,16 @@
+{
+  "extends": ["react-app"],
+  "root": true,
+  "plugins": ["import", "simple-import-sort", "unused-imports"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "unused-imports/no-unused-imports": "error",
+        "import/no-duplicates": "error"
+      }
+    }
+  ]
+}

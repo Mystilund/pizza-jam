@@ -1,4 +1,5 @@
 import { useGame } from '../contexts/game-context';
+import { GameLoopProvider } from '../contexts/game-loop-context';
 import { GameLoopCookScene } from '../scenes/game-loop/cook';
 import { GameLoopPreparationScene } from '../scenes/game-loop/preparation';
 import { GameLoopSummaryScene } from '../scenes/game-loop/summary';
@@ -17,13 +18,15 @@ export const SceneManager = () => {
       return <SettingsScene />;
     case Scene.KEYBOARD_SETTINGS:
       return <KeyboardSettingsScene />;
-    case Scene.GAME_LOOP_PREPARATION:
-      return <GameLoopPreparationScene />;
-    case Scene.GAME_LOOP_COOK:
-      return <GameLoopCookScene />;
-    case Scene.GAME_LOOP_SUMMARY:
-      return <GameLoopSummaryScene />;
-    default:
-      return null;
   }
+
+  return (
+    <GameLoopProvider>
+      {activeScene === Scene.GAME_LOOP_PREPARATION && (
+        <GameLoopPreparationScene />
+      )}
+      {activeScene === Scene.GAME_LOOP_COOK && <GameLoopCookScene />}
+      {activeScene === Scene.GAME_LOOP_SUMMARY && <GameLoopSummaryScene />}
+    </GameLoopProvider>
+  );
 };

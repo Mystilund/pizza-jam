@@ -15,7 +15,7 @@ import { CenterBGLoop } from '../components/center-bg-loop';
 import { AnimatedCheckMarkCircleIcon } from '../components/icons/icons';
 import { KeyboardOverlay } from '../components/settings/KeyboardOverlay';
 import { useGame } from '../contexts/game-context';
-import { FlexStyle } from '../theme/components/flex';
+import { MenuStyle, ScrollbarStyle } from '../theme/components/generic-style';
 import { defaultConfiguration, ValidKeyboardKey } from '../utils/constants';
 import { translateIngredients } from '../utils/translators';
 import { Ingredients } from '../utils/types';
@@ -60,16 +60,10 @@ export const KeyboardSettingsScene = () => {
         maxH="calc(100% - 40px)"
         overflow="auto"
         position="relative"
-        {...FlexStyle.menu}
+        {...MenuStyle.menu}
         sx={{
-          '&::-webkit-scrollbar': {
-            w: '6px',
-          },
-          '&::-webkit-scrollbar-thumb': {
-            bg: 'tomato',
-            borderRadius: '8px',
-          },
-          ...FlexStyle.menu.sx,
+          ...ScrollbarStyle,
+          ...MenuStyle.menu.sx,
         }}
       >
         <Heading variant="menu">Keyboard mapping :</Heading>

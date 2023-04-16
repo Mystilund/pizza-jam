@@ -1,0 +1,51 @@
+<svg id="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .cream1 {
+        fill: #e6e8ed;
+      }
+
+      .cream2 {
+        fill: #96d7db;
+      }
+
+      .cream3 {
+        fill: #eeda48;
+      }
+
+      .cream4 {
+        fill: #f06a55;
+      }
+
+      .cream5 {
+        fill: #fff;
+      }
+
+      .cream6 {
+        fill: none;
+        stroke: #3d344c;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <rect class="cream1" x="74" y="32" width="24" height="84" />
+  <polygon class="cream2" points="74 32 98 32 86 14 74 32" />
+  <rect class="cream1" x="30" y="32" width="44" height="84" />
+  <path class="cream3" d="M44,0H84a2,2,0,0,1,2,2V14a0,0,0,0,1,0,0H42a0,0,0,0,1,0,0V2A2,2,0,0,1,44,0Z" />
+  <polygon class="cream2" points="74 32 30 32 42 14 86 14 74 32" />
+  <circle class="cream4" cx="52" cy="74" r="11" />
+  <path class="cream2" d="M74,116v10H96a2,2,0,0,0,2-2v-8Z" />
+  <path class="cream2" d="M30,116v8a2,2,0,0,0,2,2H74V116Z" />
+  <path class="cream5"
+    d="M39,124V32L51,14V2a2,2,0,0,1,2-2H44a2,2,0,0,0-2,2V14L30,32v92a2,2,0,0,0,2,2h9A2,2,0,0,1,39,124Z" />
+  <path class="cream6" d="M44,0H84a2,2,0,0,1,2,2V14a0,0,0,0,1,0,0H42a0,0,0,0,1,0,0V2A2,2,0,0,1,44,0Z" />
+  <polygon class="cream6" points="74 32 30 32 42 14 86 14 74 32" />
+  <circle class="cream6" cx="52" cy="74" r="11" />
+  <path class="cream6" d="M74,116v10H96a2,2,0,0,0,2-2v-8Z" />
+  <path class="cream6" d="M30,116v8a2,2,0,0,0,2,2H74V116Z" />
+  <rect class="cream6" x="30" y="32" width="44" height="84" />
+  <rect class="cream6" x="74" y="32" width="24" height="84" />
+  <line class="cream6" x1="98" y1="32" x2="86" y2="14" />
+</svg>

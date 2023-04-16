@@ -1,25 +1,16 @@
 import { AspectRatio, Button, Flex, Image } from '@chakra-ui/react';
-import { useEffect } from 'react';
 
 import { CenterBGLoop } from '../components/center-bg-loop';
 import { useGame } from '../contexts/game-context';
-import { FlexStyle } from '../theme/components/flex';
-import { CDN_URL, PLAY_MUSIC_EVENT } from '../utils/constants';
-import { AudioAssetUrl, Scene } from '../utils/types';
+import { usePlayMusicOnMount } from '../hooks/use-play-music-on-mount';
+import { MenuStyle } from '../theme/components/generic-style';
+import { CDN_URL } from '../utils/constants';
+import { Scene } from '../utils/types';
 
 export const MainMenuScene = () => {
   const { goToScene } = useGame();
 
-  useEffect(() => {
-    const updateEvent = new CustomEvent<{ value: AudioAssetUrl }>(
-      PLAY_MUSIC_EVENT,
-      {
-        detail: { value: 'funiculi-funicula.mp3' },
-      }
-    );
-
-    window.dispatchEvent(updateEvent);
-  }, []);
+  usePlayMusicOnMount('funiculi-funicula.mp3');
 
   return (
     <CenterBGLoop>
@@ -31,7 +22,7 @@ export const MainMenuScene = () => {
         p="40px"
         flexDir="column"
         alignItems="center"
-        {...FlexStyle.menu}
+        {...MenuStyle.menu}
       >
         <AspectRatio ratio={25 / 11} w="100%">
           <Image src={`${CDN_URL}/images/logo.png`} />

@@ -27,17 +27,17 @@ export enum Ingredients {
   BEEF = 'BEEF',
   SALMON = 'SALMON',
   TUNA = 'TUNA',
-  MOZARELLA = 'MOZARELLA',
+  CHEESE = 'CHEESE',
   GOAT_CHEESE = 'GOAT_CHEESE',
   BLUE_CHEESE = 'BLUE_CHEESE',
   MUSHROOMS = 'MUSHROOMS',
   PEPPERS = 'PEPPERS',
   POTATOS = 'POTATOS',
   OLIVES = 'OLIVES',
-  ORIGAN = 'ORIGAN',
+  HERBS = 'HERBS',
   ONIONS = 'ONIONS',
   HONEY = 'HONEY',
-  ANANAS = 'ANANAS',
+  PINEAPPLE = 'PINEAPPLE',
 }
 
 export enum Recipe {
@@ -72,6 +72,7 @@ export type Configuration = {
   muted: boolean;
   keyboardMap: Record<Ingredients, string>;
   game: {
+    tutorial: boolean;
     recipes: Recipe[];
     ingredients: Record<Ingredients, number>;
     money: number;

@@ -1,10 +1,54 @@
 import { BoxProps, chakra } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+import { FunctionComponent, SVGProps } from 'react';
 
+import { Ingredients } from '../../utils/types';
+import { ReactComponent as Beef } from './Beef.svg';
+import { ReactComponent as BlueCheese } from './BlueCheese.svg';
 import { ReactComponent as CheckMarkCircleIcon } from './CheckMarkCircle.svg';
+import { ReactComponent as Cheese } from './Cheese.svg';
+import { ReactComponent as Chicken } from './Chicken.svg';
+import { ReactComponent as Cream } from './Cream.svg';
+import { ReactComponent as Dough } from './Dough.svg';
+import { ReactComponent as GoatCheese } from './GoatCheese.svg';
+import { ReactComponent as Ham } from './Ham.svg';
+import { ReactComponent as Herb } from './Herb.svg';
+import { ReactComponent as Honey } from './Honey.svg';
+import { ReactComponent as Mushroom } from './Mushroom.svg';
+import { ReactComponent as Olives } from './Olives.svg';
+import { ReactComponent as Onion } from './Onion.svg';
+import { ReactComponent as Pepper } from './Pepper.svg';
+import { ReactComponent as Pepperoni } from './Pepperoni.svg';
+import { ReactComponent as Pineapple } from './Pineapple.svg';
+import { ReactComponent as Potato } from './Potato.svg';
+import { ReactComponent as Salmon } from './Salmon.svg';
+import { ReactComponent as Tomato } from './Tomato.svg';
+import { ReactComponent as Tuna } from './Tuna.svg';
 
+export { ReactComponent as Beef } from './Beef.svg';
+export { ReactComponent as BlueCheese } from './BlueCheese.svg';
 export { ReactComponent as CheckMarkCircleIcon } from './CheckMarkCircle.svg';
+export { ReactComponent as Cheese } from './Cheese.svg';
+export { ReactComponent as Chicken } from './Chicken.svg';
+export { ReactComponent as Coin } from './Coin.svg';
+export { ReactComponent as Cream } from './Cream.svg';
+export { ReactComponent as Dough } from './Dough.svg';
+export { ReactComponent as GoatCheese } from './GoatCheese.svg';
 export { ReactComponent as GraphicEqIcon } from './GraphicEq.svg';
+export { ReactComponent as Ham } from './Ham.svg';
+export { ReactComponent as Heart } from './Heart.svg';
+export { ReactComponent as Herb } from './Herb.svg';
+export { ReactComponent as Honey } from './Honey.svg';
+export { ReactComponent as Mushroom } from './Mushroom.svg';
+export { ReactComponent as Olives } from './Olives.svg';
+export { ReactComponent as Onion } from './Onion.svg';
+export { ReactComponent as Pepper } from './Pepper.svg';
+export { ReactComponent as Pepperoni } from './Pepperoni.svg';
+export { ReactComponent as Pineapple } from './Pineapple.svg';
+export { ReactComponent as Potato } from './Potato.svg';
+export { ReactComponent as Salmon } from './Salmon.svg';
+export { ReactComponent as Tomato } from './Tomato.svg';
+export { ReactComponent as Tuna } from './Tuna.svg';
 
 const styledCheckMarkCircle = styled(CheckMarkCircleIcon)`
   .checkmark__circle {
@@ -68,4 +112,30 @@ export const AnimatedCheckMarkCircleIcon = (
       {...props}
     />
   );
+};
+
+export const IngredientIconMap: Record<
+  Ingredients,
+  FunctionComponent<SVGProps<SVGSVGElement>>
+> = {
+  [Ingredients.DOUGH]: Dough,
+  [Ingredients.TOMATO_SAUCE]: Tomato,
+  [Ingredients.CREAM_SAUCE]: Cream,
+  [Ingredients.HAM]: Ham,
+  [Ingredients.PEPPERONI]: Pepperoni,
+  [Ingredients.CHICKEN]: Chicken,
+  [Ingredients.BEEF]: Beef,
+  [Ingredients.SALMON]: Salmon,
+  [Ingredients.TUNA]: Tuna,
+  [Ingredients.CHEESE]: Cheese,
+  [Ingredients.GOAT_CHEESE]: GoatCheese,
+  [Ingredients.BLUE_CHEESE]: BlueCheese,
+  [Ingredients.MUSHROOMS]: Mushroom,
+  [Ingredients.PEPPERS]: Pepper,
+  [Ingredients.POTATOS]: Potato,
+  [Ingredients.OLIVES]: Olives,
+  [Ingredients.HERBS]: Herb,
+  [Ingredients.ONIONS]: Onion,
+  [Ingredients.HONEY]: Honey,
+  [Ingredients.PINEAPPLE]: Pineapple,
 };

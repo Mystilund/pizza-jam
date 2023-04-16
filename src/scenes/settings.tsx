@@ -2,9 +2,10 @@ import { Box, Button, Checkbox, Flex, Grid, GridItem } from '@chakra-ui/react';
 
 import { CenterBGLoop } from '../components/center-bg-loop';
 import { LanguageSelector } from '../components/settings/LanguageSelector';
+import { ResetSave } from '../components/settings/ResetSave';
 import { VolumeSlider } from '../components/settings/VolumeSlider';
 import { useGame } from '../contexts/game-context';
-import { FlexStyle } from '../theme/components/flex';
+import { MenuStyle } from '../theme/components/generic-style';
 import { PLAY_SOUND_EVENT } from '../utils/constants';
 import { AudioAssetUrl, Language, Scene } from '../utils/types';
 
@@ -46,7 +47,7 @@ export const SettingsScene = () => {
 
   return (
     <CenterBGLoop>
-      <Box minW="400px" w="50%" maxW="600px" p="40px" {...FlexStyle.menu}>
+      <Box minW="400px" w="50%" maxW="600px" p="40px" {...MenuStyle.menu}>
         <Grid
           templateColumns={'max-content 1fr'}
           rowGap="20px"
@@ -83,6 +84,7 @@ export const SettingsScene = () => {
               Mute
             </Checkbox>
           </GridItem>
+          <ResetSave />
         </Grid>
         <Flex gap="40px">
           <Button

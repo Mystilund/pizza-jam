@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { useEffect, useRef } from 'react';
 
-import { audioAssets, CDN_URL, imgAssets } from '../utils/constants';
+import { /*audioAssets,*/ CDN_URL, imgAssets } from '../utils/constants';
 import { AudioAssetUrl, ImgAssetUrl } from '../utils/types';
 
 type AssetsManagerProps = {
@@ -16,17 +16,19 @@ export const AssetsManager = ({
   onProgress,
 }: AssetsManagerProps) => {
   const progressObj = useRef(
-    Object.entries([
-      ...Object.values(imgAssets).map((a) => [a, false]),
-      ...Object.values(audioAssets).map((a) => [a, false]),
+    Object.fromEntries([
+      ...imgAssets.map((a) => [a, false]),
+      /*...audioAssets.map((a) => [a, false]),*/
     ]) as unknown as Record<ImgAssetUrl | AudioAssetUrl, boolean>
   );
 
-  const onImageLoaded = () => {
+  const onResourceLoaded = () => {
     onProgress(
-      (Object.values(progressObj.current).filter(Boolean).length /
-        imgAssets.length) *
-        100
+      Math.round(
+        (Object.values(progressObj.current).filter(Boolean).length /
+          imgAssets.length /*+ audioAssets.length*/) *
+          100
+      )
     );
   };
 
@@ -37,7 +39,7 @@ export const AssetsManager = ({
       img.onload = (event) => {
         resolve(event);
         progressObj.current[url] = true;
-        onImageLoaded();
+        onResourceLoaded();
 
         // To keep it loaded in the page and avoid flickering
         const imgNode = document.createElement('img');
@@ -50,23 +52,29 @@ export const AssetsManager = ({
     });
   };
 
-  const loadMusic = async (url: AudioAssetUrl) => {
+  /*const loadMusic = async (url: AudioAssetUrl) => {
     const audio = new Audio();
 
     return new Promise((resolve, reject) => {
-      audio.oncanplaythrough = (event) => {
-        resolve(event);
-        progressObj.current[url] = true;
-        onImageLoaded();
-      };
+      audio.addEventListener(
+        'canplay',
+        (event) => {
+          resolve(event);
+          progressObj.current[url] = true;
+          onResourceLoaded();
+        },
+        false
+      );
       audio.onerror = reject;
 
       audio.src = `${CDN_URL}/musics/${url}`;
     });
-  };
+  };*/
 
   useEffect(() => {
-    Promise.all([...imgAssets.map(loadImage), ...audioAssets.map(loadMusic)])
+    Promise.all([
+      ...imgAssets.map(loadImage) /*, ...audioAssets.map(loadMusic)*/,
+    ])
       .then(onSuccess)
       .catch((err) => {
         console.log(err);

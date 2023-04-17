@@ -49,6 +49,7 @@ export { ReactComponent as Potato } from './Potato.svg';
 export { ReactComponent as Salmon } from './Salmon.svg';
 export { ReactComponent as Tomato } from './Tomato.svg';
 export { ReactComponent as Tuna } from './Tuna.svg';
+export { ReactComponent as User } from './User.svg';
 
 const styledCheckMarkCircle = styled(CheckMarkCircleIcon)`
   .checkmark__circle {

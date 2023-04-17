@@ -14,6 +14,7 @@ export const imgAssets = [
   'menu-bg.jpg',
   'pizza-recipe-bg.jpg',
   'wood-loop-bg.jpg',
+  'preparation-main-view-bg.jpg',
   'beef.png',
   'blue-cheese.png',
   'chicken.png',
@@ -329,7 +330,7 @@ export const defaultConfiguration: Configuration = {
       Object.values(Ingredients).map((i): [Ingredients, number] => [i, 0])
     ) as unknown as Record<Ingredients, number>,
     money: 100,
-    satisfaction: 0,
+    satisfaction: 5,
     tutorial: false,
   },
 };
@@ -359,3 +360,47 @@ export const IngredientsImageMap: Record<Ingredients, ImgAssetUrl> = {
   [Ingredients.HONEY]: 'honey.png',
   [Ingredients.PINEAPPLE]: 'pineapple.png',
 };
+
+export const ROUND_DURATION = 120;
+export const SATISFACTION_EARN_PER_CLIENT = 0.15;
+export const SATISFACTION_LOST_PER_CLIENT = 0.1;
+export const SATISFACTION_EARN_ROUND_FINISHED = 1;
+
+export const SatisfactionClientNumberLinks: Array<Array<[number, number]>> = [
+  [
+    [0, 15],
+    [10, 12],
+  ],
+  [
+    [15, 25],
+    [12, 13],
+  ],
+  [
+    [25, 35],
+    [14, 16],
+  ],
+  [
+    [35, 45],
+    [16, 18],
+  ],
+  [
+    [45, 55],
+    [20, 22],
+  ],
+  [
+    [55, 65],
+    [22, 24],
+  ],
+  [
+    [65, 75],
+    [24, 26],
+  ],
+  [
+    [75, 90],
+    [26, 28],
+  ],
+  [
+    [90, 100],
+    [28, 30],
+  ],
+];

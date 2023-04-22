@@ -1,10 +1,35 @@
-import { Box } from '@chakra-ui/react';
+import { Box, useBoolean } from '@chakra-ui/react';
 
-// import { usePlayMusicOnMount } from '../../hooks/use-play-music-on-mount';
+import { CounterSplash } from '../../components/game-loop/cook/counter-splash';
+import { GameFinishedSplash } from '../../components/game-loop/cook/game-finished-splash';
+import { GameScreen } from '../../components/game-loop/cook/game-screen';
+import { GameTimer } from '../../components/game-loop/cook/game-timer';
+import { useCook } from '../../contexts/cook-context';
+import { usePlayMusicOnMount } from '../../hooks/use-play-music-on-mount';
 
 export const GameLoopCookScene = () => {
-  // Play music after 5sec, time for a css animation doing 5, 4, 3, 2, 1 and clients arrive during this time
-  // usePlayMusicOnMount('tarantela-napolitana.mp3');
+  const { hasGameStarted, startGame, finishGame, isFinished } = useCook();
+  const [isSplashCounterDisplayed, setIsSplashCounterDisplayed] =
+    useBoolean(true);
 
-  return <Box />;
+  usePlayMusicOnMount('tarantela-napolitana.mp3', {
+    enabled: true,
+    loop: false,
+  });
+
+  const onSplashCounterFinished = () => {
+    setIsSplashCounterDisplayed.off();
+    startGame();
+  };
+
+  return (
+    <Box position="relative" w="100%" h="100%">
+      {isSplashCounterDisplayed && (
+        <CounterSplash onCountFinished={onSplashCounterFinished} />
+      )}
+      {hasGameStarted && <GameTimer onTimerEnd={finishGame} />}
+      {isFinished && <GameFinishedSplash />}
+      <GameScreen />
+    </Box>
+  );
 };

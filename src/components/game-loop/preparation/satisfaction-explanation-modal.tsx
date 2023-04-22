@@ -18,8 +18,8 @@ import {
   SATISFACTION_EARN_PER_CLIENT,
   SATISFACTION_EARN_ROUND_FINISHED,
   SATISFACTION_LOST_PER_CLIENT,
-} from '../../utils/constants';
-import { Heart } from '../icons/icons';
+} from '../../../utils/constants';
+import { Heart } from '../../icons/icons';
 
 export const SatisfactionExplanationModal = () => {
   const [isModalOpen, setIsModalOpen] = useBoolean(false);

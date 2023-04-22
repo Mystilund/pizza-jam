@@ -12,7 +12,7 @@ import {
   useBoolean,
 } from '@chakra-ui/react';
 
-import { Cheese, Chicken, Salmon, Tomato } from '../icons/icons';
+import { Cheese, Chicken, Salmon, Tomato } from '../../icons/icons';
 
 export const IngredientsExplanationModal = () => {
   const [isModalOpen, setIsModalOpen] = useBoolean(false);

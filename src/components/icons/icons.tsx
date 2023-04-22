@@ -1,8 +1,8 @@
-import { BoxProps, chakra } from '@chakra-ui/react';
+import { BoxProps, chakra, Icon, IconProps } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { FunctionComponent, SVGProps } from 'react';
 
-import { Ingredients } from '../../utils/types';
+import { ClientType, Ingredients, Skin } from '../../utils/types';
 import { ReactComponent as Beef } from './Beef.svg';
 import { ReactComponent as BlueCheese } from './BlueCheese.svg';
 import { ReactComponent as CheckMarkCircleIcon } from './CheckMarkCircle.svg';
@@ -14,6 +14,7 @@ import { ReactComponent as GoatCheese } from './GoatCheese.svg';
 import { ReactComponent as Ham } from './Ham.svg';
 import { ReactComponent as Herb } from './Herb.svg';
 import { ReactComponent as Honey } from './Honey.svg';
+import { ReactComponent as Man } from './Man.svg';
 import { ReactComponent as Mushroom } from './Mushroom.svg';
 import { ReactComponent as Olives } from './Olives.svg';
 import { ReactComponent as Onion } from './Onion.svg';
@@ -24,9 +25,11 @@ import { ReactComponent as Potato } from './Potato.svg';
 import { ReactComponent as Salmon } from './Salmon.svg';
 import { ReactComponent as Tomato } from './Tomato.svg';
 import { ReactComponent as Tuna } from './Tuna.svg';
+import { ReactComponent as Woman } from './Woman.svg';
 
 export { ReactComponent as Beef } from './Beef.svg';
 export { ReactComponent as BlueCheese } from './BlueCheese.svg';
+export { ReactComponent as Can } from './Can.svg';
 export { ReactComponent as CheckMarkCircleIcon } from './CheckMarkCircle.svg';
 export { ReactComponent as Cheese } from './Cheese.svg';
 export { ReactComponent as Chicken } from './Chicken.svg';
@@ -111,6 +114,37 @@ export const AnimatedCheckMarkCircleIcon = (
       w={hAndW}
       h={hAndW}
       {...props}
+    />
+  );
+};
+
+type ClientIconType = IconProps &
+  Pick<ClientType, 'skin' | 'color' | 'skinColor' | 'hairColor'>;
+
+export const Client = ({
+  skin,
+  color,
+  skinColor,
+  hairColor,
+  ...rest
+}: ClientIconType) => {
+  const SkinIcon = skin === Skin.MALE1 ? Man : Woman;
+
+  return (
+    <Icon
+      as={SkinIcon}
+      sx={{
+        '& .skin': {
+          fill: skinColor,
+        },
+        '& .hair': {
+          fill: hairColor,
+        },
+        '& .shirt': {
+          fill: color,
+        },
+      }}
+      {...rest}
     />
   );
 };

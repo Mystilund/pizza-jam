@@ -1,12 +1,15 @@
 import { Box } from '@chakra-ui/react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { useGame } from '../contexts/game-context';
 import {
   audioAssets,
   CDN_URL,
+  PAUSE_MUSIC_EVENT,
   PLAY_MUSIC_EVENT,
   PLAY_SOUND_EVENT,
+  RESUME_MUSIC_EVENT,
+  STOP_MUSIC_EVENT,
 } from '../utils/constants';
 import { AudioAssetUrl } from '../utils/types';
 
@@ -24,15 +27,22 @@ export const AudioManager = () => {
     []
   );
 
+  useLayoutEffect(() => {
+    if (musicRef.current) {
+      musicRef.current.play();
+    }
+  }, [musicLoaded]);
+
   useEffect(() => {
     const playMusic = (event: Event) => {
       if (isCustomMusicEvent(event)) {
         setMusicLoaded(event.detail.value);
-        setTimeout(() => {
-          musicRef.current?.play();
-        }, 100);
+        if (typeof event.detail.loop !== 'undefined' && musicRef.current) {
+          musicRef.current.loop = event.detail.loop;
+        }
       }
     };
+
     const playSound = (event: Event) => {
       if (isCustomMusicEvent(event)) {
         const index = soundTrackIndex.current;
@@ -49,11 +59,36 @@ export const AudioManager = () => {
       }
     };
 
+    const stopMusic = () => {
+      if (musicRef.current) {
+        musicRef.current.pause();
+        musicRef.current.currentTime = 0;
+      }
+    };
+
+    const resumeMusic = () => {
+      if (musicRef.current) {
+        musicRef.current.play();
+      }
+    };
+
+    const pauseMusic = () => {
+      if (musicRef.current) {
+        musicRef.current.pause();
+      }
+    };
+
     window.addEventListener(PLAY_MUSIC_EVENT, playMusic);
+    window.addEventListener(PAUSE_MUSIC_EVENT, pauseMusic);
+    window.addEventListener(RESUME_MUSIC_EVENT, resumeMusic);
+    window.addEventListener(STOP_MUSIC_EVENT, stopMusic);
     window.addEventListener(PLAY_SOUND_EVENT, playSound);
 
     return () => {
       window.removeEventListener(PLAY_MUSIC_EVENT, playMusic);
+      window.removeEventListener(PAUSE_MUSIC_EVENT, pauseMusic);
+      window.removeEventListener(RESUME_MUSIC_EVENT, resumeMusic);
+      window.removeEventListener(STOP_MUSIC_EVENT, stopMusic);
       window.removeEventListener(PLAY_SOUND_EVENT, playSound);
     };
   }, [sounds]);
@@ -65,6 +100,7 @@ export const AudioManager = () => {
         configuration.musicVolume
       );
     }
+
     sounds.forEach((soundTrack) => {
       if (soundTrack.current) {
         soundTrack.current.volume = computedVolume(
@@ -96,7 +132,7 @@ export const AudioManager = () => {
 
 function isCustomMusicEvent(
   e: Event
-): e is CustomEvent<{ value: AudioAssetUrl }> {
+): e is CustomEvent<{ value: AudioAssetUrl; loop?: boolean }> {
   return !!(
     'detail' in e &&
     e.detail &&

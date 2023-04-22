@@ -7,19 +7,39 @@ import { App } from './app';
 import { GameProvider } from './contexts/game-context';
 import reportWebVitals from './reportWebVitals';
 import { theme } from './theme';
+import { CDN_URL } from './utils/constants';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
     <ChakraProvider theme={theme}>
       <Global
-        styles={{
-          body: {
-            background: 'black',
+        styles={[
+          {
+            '@font-face': {
+              fontFamily: 'AlarmClock',
+              src: `url('${CDN_URL}/fonts/alarm-clock.ttf')`,
+            },
+            body: {
+              background: 'black',
+              fontFamily: "'Lato', 'Arial', 'sans-serif'",
+            },
           },
-        }}
+          {
+            '@font-face': {
+              fontFamily: 'ActionComics',
+              src: `url('${CDN_URL}/fonts/action-comics.ttf')`,
+            },
+          },
+        ]}
       />
       <GameProvider>
         <App />

@@ -1,3 +1,4 @@
+import { CookProvider } from '../contexts/cook-context';
 import { useGame } from '../contexts/game-context';
 import { GameLoopProvider } from '../contexts/game-loop-context';
 import { GameLoopCookScene } from '../scenes/game-loop/cook';
@@ -25,7 +26,11 @@ export const SceneManager = () => {
       {activeScene === Scene.GAME_LOOP_PREPARATION && (
         <GameLoopPreparationScene />
       )}
-      {activeScene === Scene.GAME_LOOP_COOK && <GameLoopCookScene />}
+      {activeScene === Scene.GAME_LOOP_COOK && (
+        <CookProvider>
+          <GameLoopCookScene />
+        </CookProvider>
+      )}
       {activeScene === Scene.GAME_LOOP_SUMMARY && <GameLoopSummaryScene />}
     </GameLoopProvider>
   );

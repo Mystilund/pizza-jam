@@ -1,11 +1,11 @@
 import { TimeIcon } from '@chakra-ui/icons';
 import { Flex, HStack, Text } from '@chakra-ui/react';
 
-import { useGameLoop } from '../../contexts/game-loop-context';
-import { calcTimePerPizzaFromRange } from '../../utils/calculator';
-import { ROUND_DURATION } from '../../utils/constants';
-import { User } from '../icons/icons';
-import { Infobox } from './info-card';
+import { useGameLoop } from '../../../contexts/game-loop-context';
+import { calcTimePerPizzaFromRange } from '../../../utils/calculator';
+import { ROUND_DURATION } from '../../../utils/constants';
+import { User } from '../../icons/icons';
+import { Infobox } from '../info-card';
 
 export const ExpectationCard = () => {
   const { clientRange } = useGameLoop();

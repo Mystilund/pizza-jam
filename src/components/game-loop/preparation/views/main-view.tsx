@@ -1,14 +1,16 @@
 import { Box, Button, Flex, Spacer } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+import { useEffect } from 'react';
 
 import { useGame } from '../../../../contexts/game-context';
+import { useGameLoop } from '../../../../contexts/game-loop-context';
 import { PreparationView } from '../../../../scenes/game-loop/preparation';
 import { CDN_URL } from '../../../../utils/constants';
 import { Scene } from '../../../../utils/types';
 import { Coin, Heart } from '../../../icons/icons';
-import { ExpectationCard } from '../../expectation-card';
-import { HelpCard } from '../../help-card';
 import { ParallelogramBox } from '../../parallelogram-box';
+import { ExpectationCard } from '../expectation-card';
+import { HelpCard } from '../help-card';
 
 type PreparationMainViewProps = {
   onChangeView: (view: PreparationView) => void;
@@ -75,6 +77,9 @@ export const PreparationMainView = ({
   onChangeView,
 }: PreparationMainViewProps) => {
   const { configuration, goToScene } = useGame();
+  const { resetCart } = useGameLoop();
+
+  useEffect(() => resetCart(), [resetCart]);
 
   const goToGame = () => {
     goToScene(Scene.GAME_LOOP_COOK);

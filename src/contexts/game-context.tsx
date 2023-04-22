@@ -84,6 +84,7 @@ export const GameProvider = ({ children }: GameContextProps) => {
   return (
     <GameContext.Provider value={providerParameters}>
       <Box
+        id="game-container"
         bg="black"
         w={`${w}px`}
         h={`${h}px`}

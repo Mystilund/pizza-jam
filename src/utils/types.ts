@@ -1,4 +1,4 @@
-import { audioAssets, imgAssets } from './constants';
+import { audioAssets, imgAssets, validKeyboardKey } from './constants';
 
 export enum Language {
   FR = 'fr',
@@ -61,6 +61,11 @@ export enum Recipe {
   MEXICAN = 'MEXICAN',
 }
 
+export enum Skin {
+  MALE1 = 'MALE1',
+  FEMALE1 = 'FEMALE1',
+}
+
 export type ArrayElement<ArrayType extends readonly unknown[]> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
 
@@ -79,3 +84,32 @@ export type Configuration = {
     satisfaction: number;
   };
 };
+
+export type ClientType = {
+  skin: Skin;
+  color: string;
+  skinColor: string;
+  hairColor: string;
+  error: number;
+  expectation: Recipe;
+  skipped: boolean;
+};
+
+export type GameData = {
+  usedIngredients: Record<Ingredients, number>;
+  clients: ClientType[];
+  pizzaSuccess: number;
+  currentIndex: number;
+};
+
+export type SummaryData = {
+  totalClients: number;
+  clientsSkipped: number;
+  clientsError: number;
+  clientsSuccess: number;
+  satisfactionEarned: number;
+  moneyEarned: number;
+  moneyPossibleTotal: number;
+};
+
+export type ValidKeyboardKey = ArrayElement<typeof validKeyboardKey>;

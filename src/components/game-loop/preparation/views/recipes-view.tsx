@@ -14,7 +14,7 @@ import {
 import { translateRecipe } from '../../../../utils/translators';
 import { Recipe } from '../../../../utils/types';
 import { Coin, Heart } from '../../../icons/icons';
-import { OrderTicket } from '../../order-ticket';
+import { OrderTicketPizza } from '../../order-ticket-pizza';
 import { ParallelogramBox } from '../../parallelogram-box';
 import { Pizza } from '../../pizza';
 
@@ -65,7 +65,7 @@ export const PreparationRecipesView = ({
       position="relative"
       py="20px"
     >
-      <Box h="100%" py="30px" overflow="auto" sx={ScrollbarStyle}>
+      <Box h="100%" pb="30px" overflow="auto" sx={ScrollbarStyle}>
         <Flex px="30px" alignItems="center" gap={2}>
           <Button
             colorScheme="orange"
@@ -108,7 +108,7 @@ export const PreparationRecipesView = ({
                       color="white"
                       _hover={{}}
                     >
-                      <Heading fontFamily="cursive" fontSize="2em">
+                      <Heading variant="cursive" fontSize="2em">
                         {translateRecipe(recipe)}
                       </Heading>
                       <Pizza
@@ -164,7 +164,10 @@ export const PreparationRecipesView = ({
         zIndex={20}
       >
         {selectedRecipe && (
-          <OrderTicket recipe={selectedRecipe} onClose={closeIngredientList} />
+          <OrderTicketPizza
+            recipe={selectedRecipe}
+            onClose={closeIngredientList}
+          />
         )}
       </Box>
     </Box>

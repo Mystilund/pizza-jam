@@ -7,6 +7,16 @@ export const Heading: ComponentStyleConfig = {
       fontWeight: 'bold',
       mb: 4,
     },
+    cursive: {
+      fontWeight: 'normal',
+      fontFamily: '"Pacifico", cursive',
+    },
+    cursiveMenu: {
+      fontSize: '1.5em',
+      fontWeight: 'normal',
+      fontFamily: '"Pacifico", cursive',
+      mb: 4,
+    },
   },
   defaultProps: {},
 };

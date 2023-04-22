@@ -1,7 +1,8 @@
 import { InfoOutlineIcon } from '@chakra-ui/icons';
-import { Button, Flex, HStack } from '@chakra-ui/react';
+import { Flex, HStack } from '@chakra-ui/react';
 
-import { Infobox } from './info-card';
+import { Infobox } from '../info-card';
+import { GameExplanationModal } from './game-explanation-modal';
 import { IngredientsExplanationModal } from './ingredients-explanation-modal';
 import { SatisfactionExplanationModal } from './satisfaction-explanation-modal';
 
@@ -24,13 +25,7 @@ export const HelpCard = () => (
       </HStack>
       <HStack py="5px">
         <InfoOutlineIcon />
-        <Button
-          variant="link"
-          color="inherit"
-          _hover={{ textDecoration: 'underline' }}
-        >
-          How do we play the game ?
-        </Button>
+        <GameExplanationModal />
       </HStack>
     </Flex>
   </Infobox>

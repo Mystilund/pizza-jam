@@ -30,6 +30,12 @@ export const GameApp = () => {
           <Spinner size="lg" color="orange.500" />
         </Box>
         <Text>Loading... ({loadingProgress}%)</Text>
+        <Text opacity={0} fontFamily="AlarmClock">
+          Font Load
+        </Text>
+        <Text opacity={0} fontFamily="ActionComics">
+          Font Load
+        </Text>
         <AssetsManager
           onSuccess={() => setIsReady.on()}
           onError={() => setHasError.on()}

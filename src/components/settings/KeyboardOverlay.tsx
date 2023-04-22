@@ -2,7 +2,8 @@ import { Flex, Heading, Text } from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
 
 import { useGame } from '../../contexts/game-context';
-import { ValidKeyboardKey, validKeyboardKey } from '../../utils/constants';
+import { validKeyboardKey } from '../../utils/constants';
+import { ValidKeyboardKey } from '../../utils/types';
 
 type KeyboardOverlayProps = {
   onCancel: VoidFunction;

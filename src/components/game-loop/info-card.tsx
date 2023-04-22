@@ -1,15 +1,14 @@
-import { Divider, Flex, Heading } from '@chakra-ui/react';
+import { BoxProps, Divider, Flex, Heading } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 import { CDN_URL } from '../../utils/constants';
 
-export const Infobox = ({
-  children,
-  title,
-}: {
+type InfoboxProps = BoxProps & {
   children: ReactNode;
-  title: string;
-}) => (
+  title?: string;
+};
+
+export const Infobox = ({ children, title, ...rest }: InfoboxProps) => (
   <Flex
     flexDir="column"
     h="200px"
@@ -21,11 +20,16 @@ export const Infobox = ({
     background={`url("${CDN_URL}/images/pizza-recipe-bg.jpg")`}
     backgroundSize="cover"
     color="gray.200"
+    {...rest}
   >
-    <Heading variant="menu" textAlign="center" fontFamily="cursive">
-      {title}
-    </Heading>
-    <Divider borderColor="gray.200" />
+    {title && (
+      <>
+        <Heading variant="cursiveMenu" textAlign="center">
+          {title}
+        </Heading>
+        <Divider borderColor="gray.200" />
+      </>
+    )}
     {children}
   </Flex>
 );

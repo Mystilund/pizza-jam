@@ -11,9 +11,14 @@ import { VolumeSlider } from './settings/VolumeSlider';
 type SettingsViewProps = {
   onBack: VoidFunction;
   onKeyboardMenu: VoidFunction;
+  withReset?: boolean;
 };
 
-export const SettingsView = ({ onBack, onKeyboardMenu }: SettingsViewProps) => {
+export const SettingsView = ({
+  onBack,
+  onKeyboardMenu,
+  withReset = false,
+}: SettingsViewProps) => {
   const { configuration, setConfiguration } = useGame();
 
   const onLanguageChange = (value: Language) =>
@@ -87,7 +92,7 @@ export const SettingsView = ({ onBack, onKeyboardMenu }: SettingsViewProps) => {
             Mute
           </Checkbox>
         </GridItem>
-        <ResetSave />
+        {withReset && <ResetSave />}
       </Grid>
       <Flex gap="40px">
         <Button variant="menu" flex={1} onClick={onKeyboardMenu}>

@@ -28,7 +28,12 @@ export const AudioManager = () => {
   );
 
   useLayoutEffect(() => {
-    if (musicRef.current) {
+    if (
+      musicRef.current &&
+      (musicRef.current.paused ||
+        !musicRef.current.currentTime ||
+        musicRef.current.ended)
+    ) {
       musicRef.current.play();
     }
   }, [musicLoaded]);

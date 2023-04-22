@@ -14,8 +14,6 @@ export const GameLoopSummaryScene = () => {
 
   usePlayMusicOnMount('funiculi-funicula.mp3');
 
-  console.log(summaryData);
-
   return (
     <Center w="100%" h="100%" p="20px" bg="gray.200" position="relative">
       <Flex flexDir="column" w="100%" alignItems="center" gap={5}>

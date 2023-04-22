@@ -11,6 +11,7 @@ export const SettingsScene = () => {
       <SettingsView
         onBack={backScene}
         onKeyboardMenu={() => goToScene(Scene.KEYBOARD_SETTINGS)}
+        withReset={true}
       />
     </CenterBGLoop>
   );

@@ -1,5 +1,13 @@
-import { Box, Center, Spinner, Text, useBoolean } from '@chakra-ui/react';
-import { useEffect, useRef, useState } from 'react';
+import {
+  Box,
+  Button,
+  Center,
+  Link,
+  Spinner,
+  Text,
+  useBoolean,
+} from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 
 import { AssetsManager } from './managers/assets-manager';
 import { AudioManager } from './managers/audio-manager';
@@ -9,18 +17,37 @@ export const GameApp = () => {
   const [isReady, setIsReady] = useBoolean(false);
   const [hasError, setHasError] = useBoolean(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
-  const intervalRef = useRef<NodeJS.Timer>();
 
   useEffect(() => {
     if (loadingProgress === 100) {
-      clearInterval(intervalRef.current);
       setIsReady.on();
     }
   }, [loadingProgress, setIsReady]);
 
   if (!isReady && hasError) {
-    // @todo: display error page
-    return <Text>ERROR !</Text>;
+    return (
+      <Center w="100%" h="100%" color="white" bg="gray.900" flexDir="column">
+        <Text>An error occured while pre-loading the assets</Text>
+        <Text>It may come from your connection, refresh or try later</Text>
+        <Text>
+          If it's still not working, you can contact{' '}
+          <Link href="https://twitter.com/LundProd" target="_blank">
+            @LundProd
+          </Link>{' '}
+          on Twitter
+        </Text>
+        <Button
+          mt={4}
+          colorScheme="red"
+          onClick={() => {
+            setHasError.off();
+            setIsReady.on();
+          }}
+        >
+          I still want to try even with broken assets
+        </Button>
+      </Center>
+    );
   }
 
   if (!isReady) {
@@ -37,8 +64,9 @@ export const GameApp = () => {
           Font Load
         </Text>
         <AssetsManager
-          onSuccess={() => setIsReady.on()}
-          onError={() => setHasError.on()}
+          onError={() => {
+            setHasError.on();
+          }}
           onProgress={(percentage) => setLoadingProgress(percentage)}
         />
       </Center>

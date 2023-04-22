@@ -17,6 +17,14 @@ const canColors = [
   '#9EA1D4',
 ];
 const shirtColors = [
+  '#cc3333',
+  '#b92d62',
+  '#903e7e',
+  '#5f4b83',
+  '#8BAAF2',
+  '#2f4858',
+  '#7CB029',
+  '#7C4FE4',
   '#ffadad',
   '#ffd6a5',
   '#fdffb6',
@@ -27,16 +35,14 @@ const shirtColors = [
   '#ffc6ff',
 ];
 const hairColors = [
-  '#7d512c',
+  '#332316',
   '#fbd076',
-  '#fad2e1',
-  '#aed0ff',
-  '#dd7f5a',
-  '#f79d65',
+  '#f075a2',
+  '#bc562e',
+  '#f47d34',
   '#f4efe6',
-  '#bbefa9',
 ];
-const skinColor = ['#fbf1ea', '#f3d6c2', '#e5cdb0', '#d4a373'];
+const skinColor = ['#f3c9c2', '#e5cdb0', '#d4a373', '#9a7551'];
 
 // Pick a random number in a given range
 export const pickNumberInRange = (range: [number, number]) => {

@@ -1,24 +1,19 @@
 import { Box } from '@chakra-ui/react';
 import { useEffect, useRef } from 'react';
 
-import { /*audioAssets,*/ CDN_URL, imgAssets } from '../utils/constants';
+import { audioAssets, CDN_URL, imgAssets } from '../utils/constants';
 import { AudioAssetUrl, ImgAssetUrl } from '../utils/types';
 
 type AssetsManagerProps = {
-  onSuccess: () => void;
   onError: () => void;
   onProgress: (percentage: number) => void;
 };
 
-export const AssetsManager = ({
-  onSuccess,
-  onError,
-  onProgress,
-}: AssetsManagerProps) => {
+export const AssetsManager = ({ onError, onProgress }: AssetsManagerProps) => {
   const progressObj = useRef(
     Object.fromEntries([
       ...imgAssets.map((a) => [a, false]),
-      /*...audioAssets.map((a) => [a, false]),*/
+      ...audioAssets.map((a) => [a, false]),
     ]) as unknown as Record<ImgAssetUrl | AudioAssetUrl, boolean>
   );
 
@@ -26,7 +21,7 @@ export const AssetsManager = ({
     onProgress(
       Math.round(
         (Object.values(progressObj.current).filter(Boolean).length /
-          imgAssets.length /*+ audioAssets.length*/) *
+          (imgAssets.length + audioAssets.length)) *
           100
       )
     );
@@ -52,36 +47,32 @@ export const AssetsManager = ({
     });
   };
 
-  /*const loadMusic = async (url: AudioAssetUrl) => {
-    const audio = new Audio();
-
-    return new Promise((resolve, reject) => {
-      audio.addEventListener(
-        'canplay',
-        (event) => {
-          resolve(event);
-          progressObj.current[url] = true;
-          onResourceLoaded();
-        },
-        false
-      );
-      audio.onerror = reject;
-
-      audio.src = `${CDN_URL}/musics/${url}`;
-    });
-  };*/
-
   useEffect(() => {
-    Promise.all([
-      ...imgAssets.map(loadImage) /*, ...audioAssets.map(loadMusic)*/,
-    ])
-      .then(onSuccess)
-      .catch((err) => {
-        console.log(err);
-        onError();
-      });
+    Promise.all([...imgAssets.map(loadImage)]).catch((err) => {
+      console.log(err);
+      onError();
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <Box display="none" id="img-store" />;
+  return (
+    <Box display="none" id="img-store">
+      {audioAssets.map((audioAsset) => {
+        return (
+          <audio
+            key={audioAsset}
+            src={`${CDN_URL}/musics/${audioAsset}`}
+            onCanPlayThrough={() => {
+              progressObj.current[audioAsset] = true;
+              onResourceLoaded();
+            }}
+            onError={() => {
+              onError();
+            }}
+            muted
+          />
+        );
+      })}
+    </Box>
+  );
 };

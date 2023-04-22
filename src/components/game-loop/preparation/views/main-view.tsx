@@ -97,6 +97,14 @@ export const PreparationMainView = ({
       <Flex gap={2} alignItems="center">
         <Button
           border="2px solid"
+          borderColor="teal.800"
+          colorScheme="teal"
+          onClick={() => goToScene(Scene.MAIN_MENU)}
+        >
+          Back to menu
+        </Button>
+        <Button
+          border="2px solid"
           borderColor="orange.800"
           colorScheme="orange"
           onClick={() => onChangeView(PreparationView.RECIPES_VIEW)}

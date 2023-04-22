@@ -1,49 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <style>
-      .chicken1 {
-        isolation: isolate;
-        transform: rotate(45deg) translate(10px, -60px)
-      }
-
-      .chicken2 {
-        mix-blend-mode: multiply;
-      }
-
-      .chicken9,
-      .chicken3 {
-        fill: #302a27;
-      }
-
-      .chicken4 {
-        fill: #fff;
-      }
-
-      .chicken5 {
-        fill: #ed6e4b;
-      }
-
-      .chicken6 {
-        opacity: 0.24;
-      }
-
-      .chicken7 {
-        opacity: 0.12;
-      }
-
-      .chicken9,
-      .chicken8 {
-        stroke: #302a27;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2px;
-      }
-
-      .chicken8 {
-        fill: none;
-      }
-    </style>
-  </defs>
   <g class="chicken1">
     <g class="chicken2">
       <path class="chicken3"

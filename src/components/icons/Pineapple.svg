@@ -1,44 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <defs>
-    <style>
-      .pineapple1 {
-        isolation: isolate;
-      }
-
-      .pineapple2 {
-        mix-blend-mode: multiply;
-      }
-
-      .pineapple8,
-      .pineapple3 {
-        fill: #302a27;
-      }
-
-      .pineapple4 {
-        fill: #fccc33;
-      }
-
-      .pineapple5 {
-        fill: #78c17b;
-      }
-
-      .pineapple6 {
-        opacity: 0.12;
-      }
-
-      .pineapple8,
-      .pineapple7 {
-        stroke: #302a27;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2px;
-      }
-
-      .pineapple7 {
-        fill: none;
-      }
-    </style>
-  </defs>
   <g class="pineapple1">
     <g id="icons" class="pineapple2">
       <path class="pineapple3"

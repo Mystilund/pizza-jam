@@ -13,6 +13,7 @@ import {
   computeIngredientStock,
   computeMoneyData,
   computeSatisfactionEarn,
+  floatRound,
 } from '../utils/calculator';
 import {
   initialGameSummary,
@@ -178,8 +179,10 @@ export const GameLoopProvider = ({ children }: GameLoopContextProps) => {
       game: {
         ...configuration.game,
         ingredients: newIngredientList,
-        money: configuration.game.money + moneyEarned,
-        satisfaction: configuration.game.satisfaction + satisfactionEarned,
+        money: floatRound(configuration.game.money + moneyEarned),
+        satisfaction: floatRound(
+          configuration.game.satisfaction + satisfactionEarned
+        ),
       },
     });
     setSummaryData({

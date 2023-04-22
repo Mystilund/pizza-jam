@@ -1,0 +1,342 @@
+.beef1 {
+  isolation: isolate;
+}
+
+.beef2 {
+  mix-blend-mode: multiply;
+}
+
+.beef3,
+.beef7 {
+  fill: #302a27;
+}
+
+.beef4 {
+  fill: #d94b58;
+}
+
+.beef5 {
+  fill: #fff;
+}
+
+.beef6 {
+  fill: #f9efd4;
+}
+
+.beef7,
+.beef8 {
+  stroke: #302a27;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
+.beef7 {
+  opacity: 0.12;
+}
+
+.beef8 {
+  fill: none;
+}
+
+.beef9 {
+  opacity: 0.24;
+}
+
+.chicken1 {
+  isolation: isolate;
+  transform: rotate(45deg) translate(10px, -60px);
+}
+
+.chicken2 {
+  mix-blend-mode: multiply;
+}
+
+.chicken9,
+.chicken3 {
+  fill: #302a27;
+}
+
+.chicken4 {
+  fill: #fff;
+}
+
+.chicken5 {
+  fill: #ed6e4b;
+}
+
+.chicken6 {
+  opacity: 0.24;
+}
+
+.chicken7 {
+  opacity: 0.12;
+}
+
+.chicken9,
+.chicken8 {
+  stroke: #302a27;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
+.chicken8 {
+  fill: none;
+}
+
+.cream1 {
+  fill: #e6e8ed;
+}
+
+.cream2 {
+  fill: #96d7db;
+}
+
+.cream3 {
+  fill: #eeda48;
+}
+
+.cream4 {
+  fill: #f06a55;
+}
+
+.cream5 {
+  fill: #fff;
+}
+
+.cream6 {
+  fill: none;
+  stroke: #3d344c;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
+.herb1 {
+  fill: #618c15;
+}
+
+.herb2 {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 15px;
+}
+
+.herb3 {
+  fill: #74bc17;
+}
+
+.honey1 {
+  fill: #b3814b;
+}
+
+.honey2 {
+  fill: #9f7243;
+}
+
+.honey3 {
+  fill: #513b2c;
+}
+
+.honey4 {
+  fill: #88a350;
+}
+
+.honey5 {
+  fill: #f7e6c5;
+}
+
+.honey6 {
+  fill: #d7c6aa;
+}
+
+.honey7 {
+  fill: #faae3b;
+}
+
+.honey8 {
+  fill: #e29834;
+}
+
+.honey9 {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 20px;
+}
+
+.skin {
+  fill: #edabab;
+}
+
+.hair {
+  fill: #4c380c;
+}
+
+.shirt {
+  fill: #620808;
+}
+
+.chinline {
+  fill: #937f71;
+}
+
+.mushroom1 {
+  fill: #dd953e;
+}
+
+.mushroom2 {
+  fill: #db8321;
+}
+
+.mushroom3 {
+  fill: #f9e5c7;
+}
+
+.mushroom4 {
+  fill: #f7d2a1;
+}
+
+.mushroom5 {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 15px;
+}
+
+.onion1 {
+  fill: #ffa022;
+}
+
+.onion2 {
+  fill: #f28400;
+}
+
+.onion3,
+.onion4 {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 15px;
+}
+
+.onion3 {
+  stroke: #000;
+}
+
+.onion4 {
+  stroke: #e26600;
+}
+
+.pepper0 {
+  fill: #136b0a;
+}
+
+.pepper1 {
+  fill: #8fba39;
+}
+
+.pepper2 {
+  fill: #318e23;
+}
+
+.pepper3 {
+  fill: #078407;
+}
+
+.pepper4 {
+  fill: #2c9822;
+}
+
+.pineapple1 {
+  isolation: isolate;
+}
+
+.pineapple2 {
+  mix-blend-mode: multiply;
+}
+
+.pineapple8,
+.pineapple3 {
+  fill: #302a27;
+}
+
+.pineapple4 {
+  fill: #fccc33;
+}
+
+.pineapple5 {
+  fill: #78c17b;
+}
+
+.pineapple6 {
+  opacity: 0.12;
+}
+
+.pineapple8,
+.pineapple7 {
+  stroke: #302a27;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
+.pineapple7 {
+  fill: none;
+}
+
+.potato0 {
+  fill: #8b5016;
+}
+
+.potato1 {
+  fill: #e8a660;
+}
+
+.salmon1 {
+  fill: #d44f39;
+}
+
+.salmon2 {
+  fill: #e9573f;
+}
+
+.salmon3 {
+  fill: #ffa400;
+}
+
+.salmon4 {
+  fill: #404041;
+}
+
+.tomato0 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #75aa00;
+}
+
+.tomato1 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #f23329;
+}
+
+.tomato2 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #d61d1d;
+  stroke: #f60d11;
+  stroke-width: 0.216;
+  stroke-miterlimit: 2.6131;
+}
+
+.tomato3 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #d61d1d;
+}

@@ -131,17 +131,17 @@ export const computeSatisfactionEarn = (
 ) => {
   const hasBonus = !(clientsError + clientsSkipped);
 
-  return (
+  return floatRound(
     clientsSuccess * SATISFACTION_EARN_PER_CLIENT +
-    (hasBonus ? SATISFACTION_EARN_ROUND_FINISHED : 0) +
-    (clientsError + clientsSkipped) * SATISFACTION_LOST_PER_CLIENT
+      (hasBonus ? SATISFACTION_EARN_ROUND_FINISHED : 0) -
+      (clientsError + clientsSkipped) * SATISFACTION_LOST_PER_CLIENT
   );
 };
 
 // Calculate the money earn and how many it was possible to earn
 export const computeMoneyData = (clients: ClientType[]) => {
   const reducer = (acc: number, value: ClientType) => {
-    return acc + pizzaPrices[value.expectation];
+    return floatRound(acc + pizzaPrices[value.expectation]);
   };
 
   return [
@@ -152,4 +152,8 @@ export const computeMoneyData = (clients: ClientType[]) => {
       .reduce(reducer, 0),
     clients.reduce(reducer, 0),
   ];
+};
+
+export const floatRound = (n: number) => {
+  return Math.round(n * 100) / 100;
 };

@@ -1,4 +1,4 @@
-import { Box, Button, Flex } from '@chakra-ui/react';
+import { Box, Button, Divider, Flex, Text } from '@chakra-ui/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useCook } from '../../../contexts/cook-context';
@@ -16,8 +16,32 @@ export const PizzaMaker = () => {
     onSkipClient,
     onUseIngredient: ctxOnUseIngredient,
     onPizzaError,
+    onPizzaFinished,
   } = useCook();
   const [pizzaState, setPizzaState] = useState<Ingredients[]>([]);
+
+  // Bind the SEND button
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (
+        !currentClient ||
+        IngredientsPerRecipe[currentClient.expectation].length !==
+          pizzaState.length
+      ) {
+        return;
+      }
+
+      if (event.code === 'Space') {
+        onPizzaFinished();
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [currentClient, onPizzaFinished, pizzaState.length]);
 
   // When we go to a next client, we reset the used Ingredient
   useEffect(() => {
@@ -41,7 +65,6 @@ export const PizzaMaker = () => {
   // When an ingredient is used, we look if it's the right one or not
   const onUseIngredient = useCallback(
     (ingredient: Ingredients) => {
-      console.log('next : ', nextIngredient, 'used : ', ingredient);
       if (!nextIngredient) {
         return;
       }
@@ -71,17 +94,36 @@ export const PizzaMaker = () => {
     <>
       {currentClient && (
         <>
-          <Button
-            size="lg"
-            colorScheme="red"
-            position="absolute"
-            left="14%"
-            top="60%"
-            zIndex={5}
-            onClick={onSkipClient}
-          >
-            SKIP
-          </Button>
+          <Box position="absolute" left="14%" top="60%" zIndex={5}>
+            <Button
+              display="block"
+              w="100%"
+              size="md"
+              colorScheme="red"
+              onClick={onSkipClient}
+            >
+              SKIP
+            </Button>
+            <Button
+              mt={3}
+              display="block"
+              w="100%"
+              size="md"
+              colorScheme="green"
+              onClick={onPizzaFinished}
+              isDisabled={
+                !currentClient ||
+                IngredientsPerRecipe[currentClient.expectation].length !==
+                  pizzaState.length
+              }
+              h="auto"
+              py={2}
+            >
+              <Text>SEND</Text>
+              <Divider my={1} />
+              <Text>(Space)</Text>
+            </Button>
+          </Box>
           <Pizza
             recipe={currentClient.expectation}
             ingredientsList={pizzaState}

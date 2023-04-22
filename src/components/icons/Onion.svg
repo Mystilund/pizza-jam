@@ -1,31 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <defs>
-    <style>
-      .onion1 {
-        fill: #ffa022;
-      }
-
-      .onion2 {
-        fill: #f28400;
-      }
-
-      .onion3,
-      .onion4 {
-        fill: none;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 15px;
-      }
-
-      .onion3 {
-        stroke: #000;
-      }
-
-      .onion4 {
-        stroke: #e26600;
-      }
-    </style>
-  </defs>
   <path class="onion1"
     d="M249.59,461c115.73,0,209.55-54.15,209.55-172,0-69.77-31.06-115.24-79.46-159.53C316.25,71,296.15,7.37,296.15,7.37H203S182.94,71,119.51,129.5C71.11,173.79,40.05,219.26,40.05,289,40.05,406.87,133.87,461,249.59,461Z" />
   <path class="onion1"

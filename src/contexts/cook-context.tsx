@@ -125,8 +125,6 @@ export const CookProvider = ({ children }: CookContextProps) => {
   //
   // If the game finish because of the time, the remaining clients are considered as skipped
   const finishGame = useCallback(() => {
-    console.trace('FINISHGAME');
-
     setIsFinished.on();
     const clientsListCopy = [...clients];
 
@@ -182,6 +180,9 @@ export const CookProvider = ({ children }: CookContextProps) => {
 
       setCurrentIndex((x) => x + 1);
       setClients(newClientData);
+    }
+    if (currentIndex + 1 === clients.length) {
+      finishGame();
     }
   };
 

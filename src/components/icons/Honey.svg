@@ -1,47 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
-  <defs>
-    <style>
-      .honey1 {
-        fill: #b3814b;
-      }
-
-      .honey2 {
-        fill: #9f7243;
-      }
-
-      .honey3 {
-        fill: #513b2c;
-      }
-
-      .honey4 {
-        fill: #88a350;
-      }
-
-      .honey5 {
-        fill: #f7e6c5;
-      }
-
-      .honey6 {
-        fill: #d7c6aa;
-      }
-
-      .honey7 {
-        fill: #faae3b;
-      }
-
-      .honey8 {
-        fill: #e29834;
-      }
-
-      .honey9 {
-        fill: none;
-        stroke: #000;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 20px;
-      }
-    </style>
-  </defs>
   <path class="honey3"
     d="M65,41.42H304.34a25.14,25.14,0,0,1,25.14,25.14V81.15a10.72,10.72,0,0,1-10.72,10.72H50.59A10.72,10.72,0,0,1,39.87,81.15V66.56A25.14,25.14,0,0,1,65,41.42Z" />
   <polygon class="honey3"

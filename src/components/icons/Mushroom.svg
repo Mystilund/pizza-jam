@@ -1,32 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <defs>
-    <style>
-      .mushroom1 {
-        fill: #dd953e;
-      }
-
-      .mushroom2 {
-        fill: #db8321;
-      }
-
-      .mushroom3 {
-        fill: #f9e5c7;
-      }
-
-      .mushroom4 {
-        fill: #f7d2a1;
-      }
-
-      .mushroom5 {
-        fill: none;
-        stroke: #000;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 15px;
-      }
-    </style>
-  </defs>
-  <title>mushrooms</title>
   <path class="mushroom1"
     d="M225.61,403.16c44.52,36.08,106.51,36.08,151,0l1.05-.87c49.95-41.36-16.39-110.19-14.21-157.22s37.2-39.42,40.24-20.19c3.27,20.65-16.29,13.87-8.77,49.69,10.11,48.17,96.88,30.8,96.88-92.12,0-149.11-190.71-147.72-190.71-147.72S110.42,33.34,110.42,182.45c0,122.92,86.77,140.29,96.88,92.12,7.51-35.82-12-29-8.78-49.69,3-19.23,38.07-26.84,40.25,20.19s-64.16,115.86-14.22,157.22C224.9,402.59,225.25,402.87,225.61,403.16Z" />
   <path class="mushroom2"

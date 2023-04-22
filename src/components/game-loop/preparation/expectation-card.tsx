@@ -18,12 +18,12 @@ export const ExpectationCard = () => {
         <HStack>
           <User />
           <Text>
-            Clients estimated : {`${clientRange[0]}-${clientRange[1]}`}
+            Clients estimated : {`${clientRange[0]} - ${clientRange[1]}`}
           </Text>
         </HStack>
         <HStack>
           <TimeIcon />
-          <Text>Time per pizza : {`${minPizzaTime}-${maxPizzaTime}s`}</Text>
+          <Text>Time per pizza : {`${maxPizzaTime} - ${minPizzaTime}s`}</Text>
         </HStack>
         <Text fontSize="0.8em">
           Note : The duration of a round is always {ROUND_DURATION}s

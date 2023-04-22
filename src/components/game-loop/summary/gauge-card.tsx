@@ -1,5 +1,6 @@
 import { Grid, GridItem, Icon, Text } from '@chakra-ui/react';
 
+import { floatRound } from '../../../utils/calculator';
 import {
   SATISFACTION_EARN_PER_CLIENT,
   SATISFACTION_EARN_ROUND_FINISHED,
@@ -25,7 +26,13 @@ export const GaugeCard = ({
   moneyRatio,
   hasBonus,
 }: GaugeCardProps) => {
-  const clientSatisfied = (clientsSuccess / totalClients) * 100;
+  const clientSatisfied = floatRound((clientsSuccess / totalClients) * 100);
+  const satisfactionPercentage = floatRound(
+    (satisfactionEarned /
+      (totalClients * SATISFACTION_EARN_PER_CLIENT +
+        SATISFACTION_EARN_ROUND_FINISHED)) *
+      100
+  );
 
   return (
     <Infobox justifyContent="center">
@@ -35,12 +42,7 @@ export const GaugeCard = ({
           icon={<Icon as={Heart} mr={2} verticalAlign="middle" />}
           labelColor="hotpink"
           colorScheme="pink"
-          percentage={
-            (satisfactionEarned /
-              (totalClients * SATISFACTION_EARN_PER_CLIENT +
-                SATISFACTION_EARN_ROUND_FINISHED)) *
-            100
-          }
+          percentage={Math.max(satisfactionPercentage, 0)}
         />
         <Gauge
           label={`Money (+${moneyEarned})`}
@@ -57,7 +59,7 @@ export const GaugeCard = ({
               ? 'green.300'
               : clientSatisfied >= 40
               ? 'yellow.300'
-              : 'red.300'
+              : 'red.500'
           }
           colorScheme={
             clientSatisfied >= 80

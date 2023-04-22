@@ -1,35 +1,4 @@
 <svg id="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <defs>
-    <style>
-      .cream1 {
-        fill: #e6e8ed;
-      }
-
-      .cream2 {
-        fill: #96d7db;
-      }
-
-      .cream3 {
-        fill: #eeda48;
-      }
-
-      .cream4 {
-        fill: #f06a55;
-      }
-
-      .cream5 {
-        fill: #fff;
-      }
-
-      .cream6 {
-        fill: none;
-        stroke: #3d344c;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2px;
-      }
-    </style>
-  </defs>
   <rect class="cream1" x="74" y="32" width="24" height="84" />
   <polygon class="cream2" points="74 32 98 32 86 14 74 32" />
   <rect class="cream1" x="30" y="32" width="44" height="84" />

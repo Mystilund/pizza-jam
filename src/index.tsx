@@ -1,3 +1,5 @@
+import './theme/icon-styles.css';
+
 import { ChakraProvider } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 import React from 'react';

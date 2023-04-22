@@ -9,7 +9,7 @@ import { ingredientsKeyboardDefaultMapping } from './ingredients';
 
 export const CDN_URL = 'https://d27vevw9zkuexv.cloudfront.net';
 
-export const ROUND_DURATION = 12;
+export const ROUND_DURATION = 120;
 export const SATISFACTION_EARN_PER_CLIENT = 0.15;
 export const SATISFACTION_LOST_PER_CLIENT = 0.1;
 export const SATISFACTION_EARN_ROUND_FINISHED = 1;
@@ -109,8 +109,8 @@ export const defaultConfiguration: Configuration = {
     ingredients: Object.fromEntries(
       Object.values(Ingredients).map((i): [Ingredients, number] => [i, 0])
     ) as unknown as Record<Ingredients, number>,
-    money: 100,
-    satisfaction: 5,
+    money: 250,
+    satisfaction: 10,
     tutorial: false,
   },
 };

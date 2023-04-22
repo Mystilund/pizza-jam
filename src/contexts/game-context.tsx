@@ -1,5 +1,11 @@
 import { Box } from '@chakra-ui/react';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { useLocalStorage } from 'react-use';
 
 import { defaultConfiguration } from '../utils/constants';
@@ -38,23 +44,19 @@ export const GameProvider = ({ children }: GameContextProps) => {
   );
   const [activeScene, setActiveScene] = useState<Scene>(Scene.MAIN_MENU);
   const [sceneOrder, setSceneOrder] = useState([Scene.MAIN_MENU]);
-  const [[w, h, mt]] = useState(() => {
-    const maxW = Math.max(window.innerWidth, 1000);
-    const maxH = Math.max(window.innerHeight, 563);
+  const [[w, h, mt], setResolution] = useState(calculateViewport);
 
-    const h = (maxW * 9) / 16;
-    const w = (maxH * 16) / 9;
+  useEffect(() => {
+    const handler = () => {
+      setResolution(calculateViewport());
+    };
 
-    // @todo: maybe set error if to low resolution ?
+    window.addEventListener('resize', handler);
 
-    if (h < maxH) {
-      // ratio based on the width
-      return [maxW, h, (maxH - h) / 2];
-    } else {
-      // ratio based on the height
-      return [w, maxH, 0];
-    }
-  });
+    return () => {
+      window.removeEventListener('resize', handler);
+    };
+  }, []);
 
   const goToScene = (target: Scene, addToSceneOrder = true) => {
     setActiveScene(target);
@@ -97,3 +99,19 @@ export const GameProvider = ({ children }: GameContextProps) => {
     </GameContext.Provider>
   );
 };
+
+function calculateViewport(): [number, number, number] {
+  const maxW = Math.max(window.innerWidth, 1000);
+  const maxH = Math.max(window.innerHeight, 563);
+
+  const h = (maxW * 9) / 16;
+  const w = (maxH * 16) / 9;
+
+  if (h < maxH) {
+    // ratio based on the width
+    return [maxW, h, (maxH - h) / 2];
+  } else {
+    // ratio based on the height
+    return [w, maxH, 0];
+  }
+}

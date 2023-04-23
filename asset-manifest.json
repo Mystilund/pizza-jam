@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/pizza-jam/static/css/main.f48f5f77.css",
+    "main.js": "/pizza-jam/static/js/main.ae645db3.js",
+    "static/js/787.d9237c3d.chunk.js": "/pizza-jam/static/js/787.d9237c3d.chunk.js",
+    "static/media/Pineapple.svg": "/pizza-jam/static/media/Pineapple.5cef5215c1491cb48129c7dc33eaa0e0.svg",
+    "static/media/BlueCheese.svg": "/pizza-jam/static/media/BlueCheese.0877458467e42f133332ea0edb107148.svg",
+    "static/media/Olives.svg": "/pizza-jam/static/media/Olives.aa8c98f0f8e49be7cab6780eba515c45.svg",
+    "static/media/Potato.svg": "/pizza-jam/static/media/Potato.57325f3923b1cb21e21c43dc1ee2ee1a.svg",
+    "static/media/Tuna.svg": "/pizza-jam/static/media/Tuna.aaf97f6233159344fc4485d6c15ec715.svg",
+    "static/media/Herb.svg": "/pizza-jam/static/media/Herb.12b5e35199eb30d7202ef0c3bc6b2b08.svg",
+    "static/media/Woman.svg": "/pizza-jam/static/media/Woman.b694732aab2d2d654024848d3d08e659.svg",
+    "static/media/Man.svg": "/pizza-jam/static/media/Man.e9e42664af2d57f4c6fb12e2021837f9.svg",
+    "static/media/Chicken.svg": "/pizza-jam/static/media/Chicken.183f87a1608a9ed58c7e8ae0dfa25711.svg",
+    "static/media/Mushroom.svg": "/pizza-jam/static/media/Mushroom.ba800d9da137e32ab369086b724d012d.svg",
+    "static/media/Beef.svg": "/pizza-jam/static/media/Beef.116ca3128bb178d52529a17338f628f6.svg",
+    "static/media/Pepper.svg": "/pizza-jam/static/media/Pepper.12f1e88ed42c8969c5cca7a5b9fd1562.svg",
+    "static/media/Tomato.svg": "/pizza-jam/static/media/Tomato.44516f6b5e648e8f5cf24e4a58fea441.svg",
+    "static/media/Honey.svg": "/pizza-jam/static/media/Honey.ecdd28ced1a7cdb09e9203d2d4c0f154.svg",
+    "static/media/Onion.svg": "/pizza-jam/static/media/Onion.72f8459ef9f0ea2a919dff32d30dad74.svg",
+    "static/media/Cheese.svg": "/pizza-jam/static/media/Cheese.f2f1d0baeaf6baca8f631342b53fae33.svg",
+    "static/media/Can.svg": "/pizza-jam/static/media/Can.da464eb9fec5dd7ad54c24b61fc1a86e.svg",
+    "static/media/Cream.svg": "/pizza-jam/static/media/Cream.43e30128d8afd2ece82018099e371928.svg",
+    "static/media/Coin.svg": "/pizza-jam/static/media/Coin.9718133dd822c156d81852f1118a6e7d.svg",
+    "static/media/Ham.svg": "/pizza-jam/static/media/Ham.f97b45adff4a15a49717636b4eaadfa1.svg",
+    "static/media/Salmon.svg": "/pizza-jam/static/media/Salmon.632f683bcc78bee122dc144c27aab4fc.svg",
+    "static/media/GoatCheese.svg": "/pizza-jam/static/media/GoatCheese.622b67c189a719fcae94868369609f3f.svg",
+    "static/media/Heart.svg": "/pizza-jam/static/media/Heart.e79bf733c29441d49ef5c2361c9e5c4d.svg",
+    "static/media/Pepperoni.svg": "/pizza-jam/static/media/Pepperoni.d20dce47f1a4ebdd694671e862bd0741.svg",
+    "index.html": "/pizza-jam/index.html",
+    "static/media/User.svg": "/pizza-jam/static/media/User.3a7392bff2ddcd685f21bab4838ad3e2.svg",
+    "static/media/Dough.svg": "/pizza-jam/static/media/Dough.505a8ab7d54bc80b6e25b2ca7b19716d.svg",
+    "static/media/GraphicEq.svg": "/pizza-jam/static/media/GraphicEq.c4056d10f2c23bbcc1430205d0bbbe47.svg",
+    "static/media/CheckMarkCircle.svg": "/pizza-jam/static/media/CheckMarkCircle.b251c177ef01d58364401f0c08f3a0a1.svg",
+    "main.f48f5f77.css.map": "/pizza-jam/static/css/main.f48f5f77.css.map",
+    "main.ae645db3.js.map": "/pizza-jam/static/js/main.ae645db3.js.map",
+    "787.d9237c3d.chunk.js.map": "/pizza-jam/static/js/787.d9237c3d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f48f5f77.css",
+    "static/js/main.ae645db3.js"
+  ]
+}

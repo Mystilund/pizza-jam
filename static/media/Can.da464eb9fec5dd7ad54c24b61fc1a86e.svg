@@ -1,0 +1,17 @@
+<svg viewBox="0 0 500 500" xmlns=" http://www.w3.org/2000/svg">
+  <g>
+    <ellipse stroke-width="10" ry="75.5" rx="186" id="svg_2" cy="416.5" cx="250" stroke="#000" fill="currentColor" />
+    <ellipse stroke-width="10" ry="75.5" rx="186" id="svg_1" cy="83.5" cx="250" stroke="#000" fill="#c9c9c9" />
+    <line stroke="#000" id="svg_3" y2="421" x2="64" y1="85.99999" x1="64" stroke-width="10" fill="none" />
+    <line stroke="#000" id="svg_4" y2="422" x2="436" y1="86" x1="436" stroke-width="10" fill="none" />
+    <rect stroke="#000" id="svg_10" height="257" width="362.00002" y="164" x="68.99999" stroke-width="0"
+      fill="currentColor" />
+    <ellipse stroke-width="10" ry="75.5" rx="186" id="svg_12" cy="352.5" cx="250" stroke="#000" fill="#ffffff" />
+    <rect stroke="#000" id="svg_13" height="185" width="362.00002" y="164" x="68.99999" stroke-width="0" fill="#fff" />
+    <ellipse stroke-width="10" ry="75.5" rx="186" id="svg_14" cy="249.5" cx="250" stroke="#000" fill="currentColor" />
+    <rect stroke="#000" id="svg_15" height="167" width="362.00002" y="81" x="68.99999" stroke-width="0"
+      fill="currentColor" />
+    <ellipse stroke-width="10" ry="75.5" rx="186" id="svg_11" cy="83.5" cx="250" stroke="#000" fill="#c9c9c9" />
+    <ellipse stroke="#000" ry="62.5" rx="170.5" id="svg_16" cy="83.5" cx="250" stroke-width="2" fill="none" />
+  </g>
+</svg>

@@ -195,7 +195,7 @@ const Disclaimer = () => (
     <Text>First, it's my first real game and I'm happy I finished it.</Text>
     <Text>
       English is not my native language so I'm sorry if there are mistakes in
-      the text.
+      the translations.
     </Text>
     <Text>The game is optimized for Chrome.</Text>
     <Text mt={3}>

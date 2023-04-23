@@ -1,5 +1,5 @@
 {
-  "name": "game-pizza-jam",
+  "name": "pizza-jam",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "framer-motion": "^10.12.2",
+    "gh-pages": "^5.0.0",
     "i18next": "^22.4.15",
     "prettier": "^2.8.7",
     "react": "^18.2.0",
@@ -38,8 +39,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -58,5 +60,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "http://mystilund.github.io/pizza-jam"
 }

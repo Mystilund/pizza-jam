@@ -121,12 +121,12 @@ const StartGame = ({ onStart }: { onStart: VoidFunction }) => (
   <>
     <Text>
       This game is half a management simulation, half a time challenging game
-      (of course it needs to fit the theme)
+      (of course it needs to fit the theme).
     </Text>
-    <Text>You'll play the owner and cook of a pizza restaurant</Text>
+    <Text>You'll play the owner and cook of a pizza restaurant.</Text>
     <Text>
-      The goal of the game is to get the more satisfaction you can and get
-      money, unlock all the recipes and obviously to have fun
+      The goal of the game is to get the more satisfaction you can, to get money
+      and to unlock all the recipes. And obviously to have fun.
     </Text>
     <Box textAlign="center">
       <Button

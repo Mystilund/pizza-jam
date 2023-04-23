@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pizza-jam/static/css/main.f48f5f77.css",
-    "main.js": "/pizza-jam/static/js/main.ee935816.js",
+    "main.js": "/pizza-jam/static/js/main.fed612f0.js",
     "static/js/787.d9237c3d.chunk.js": "/pizza-jam/static/js/787.d9237c3d.chunk.js",
     "static/media/Pineapple.svg": "/pizza-jam/static/media/Pineapple.5cef5215c1491cb48129c7dc33eaa0e0.svg",
     "static/media/BlueCheese.svg": "/pizza-jam/static/media/BlueCheese.0877458467e42f133332ea0edb107148.svg",
@@ -33,11 +33,11 @@
     "static/media/GraphicEq.svg": "/pizza-jam/static/media/GraphicEq.c4056d10f2c23bbcc1430205d0bbbe47.svg",
     "static/media/CheckMarkCircle.svg": "/pizza-jam/static/media/CheckMarkCircle.b251c177ef01d58364401f0c08f3a0a1.svg",
     "main.f48f5f77.css.map": "/pizza-jam/static/css/main.f48f5f77.css.map",
-    "main.ee935816.js.map": "/pizza-jam/static/js/main.ee935816.js.map",
+    "main.fed612f0.js.map": "/pizza-jam/static/js/main.fed612f0.js.map",
     "787.d9237c3d.chunk.js.map": "/pizza-jam/static/js/787.d9237c3d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f48f5f77.css",
-    "static/js/main.ee935816.js"
+    "static/js/main.fed612f0.js"
   ]
 }

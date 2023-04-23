@@ -162,18 +162,23 @@ export const CookProvider = ({ children }: CookContextProps) => {
 
       if (newClientData[currentIndex].error === 3) {
         setCurrentIndex((x) => x + 1);
+
+        window.dispatchEvent(
+          new CustomEvent<{ value: AudioAssetUrl }>(PLAY_SOUND_EVENT, {
+            detail: { value: 'use-ingredient-sound.ogg' },
+          })
+        );
+
+        if (currentIndex + 1 === clients.length) {
+          // Can't use finishGame() because it won't have the right client (we set the data below)
+          setIsFinished.on();
+          setTimeout(() => {
+            gameLoopFinishGame(usedIngredients, newClientData);
+          }, 5000);
+        }
       }
 
       setClients(newClientData);
-
-      window.dispatchEvent(
-        new CustomEvent<{ value: AudioAssetUrl }>(PLAY_SOUND_EVENT, {
-          detail: { value: 'use-ingredient-sound.ogg' },
-        })
-      );
-      if (currentIndex + 1 === clients.length) {
-        finishGame();
-      }
     }
   };
 

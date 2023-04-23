@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex } from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Grid, GridItem } from '@chakra-ui/react';
 
 import { GaugeCard } from '../../components/game-loop/summary/gauge-card';
 import { StatsCard } from '../../components/game-loop/summary/stats-card';
@@ -6,6 +6,7 @@ import { SummaryCard } from '../../components/game-loop/summary/summary-card';
 import { useGame } from '../../contexts/game-context';
 import { useGameLoop } from '../../contexts/game-loop-context';
 import { usePlayMusicOnMount } from '../../hooks/use-play-music-on-mount';
+import { CDN_URL } from '../../utils/constants';
 import { Scene } from '../../utils/types';
 
 export const GameLoopSummaryScene = () => {
@@ -15,9 +16,16 @@ export const GameLoopSummaryScene = () => {
   usePlayMusicOnMount('funiculi-funicula.mp3');
 
   return (
-    <Center w="100%" h="100%" p="20px" bg="gray.200" position="relative">
-      <Flex flexDir="column" w="100%" alignItems="center" gap={5}>
-        <Flex w="100%" gap={5} justifyContent="space-around">
+    <Center
+      w="100%"
+      h="100%"
+      p="20px"
+      bg={`url("${CDN_URL}/images/bg-night.jpg")`}
+      backgroundSize="cover"
+      position="relative"
+    >
+      <Grid w="90%" mx="auto" templateColumns="50% 50%" gap={5}>
+        <GridItem>
           <GaugeCard
             satisfactionEarned={summaryData.satisfactionEarned}
             clientsSuccess={summaryData.clientsSuccess}
@@ -30,15 +38,19 @@ export const GameLoopSummaryScene = () => {
               summaryData.clientsError + summaryData.clientsSkipped === 0
             }
           />
+        </GridItem>
+        <GridItem mx="auto">
           <StatsCard
             totalClients={summaryData.totalClients}
             clientsSkipped={summaryData.clientsSkipped}
             clientsError={summaryData.clientsError}
             clientsSuccess={summaryData.clientsSuccess}
           />
-        </Flex>
-        <Flex w="100%" gap={5} justifyContent="space-around">
+        </GridItem>
+        <GridItem>
           <SummaryCard />
+        </GridItem>
+        <GridItem>
           <Flex
             flexDir="column"
             justifyContent="flex-end"
@@ -63,8 +75,8 @@ export const GameLoopSummaryScene = () => {
               </Button>
             </Box>
           </Flex>
-        </Flex>
-      </Flex>
+        </GridItem>
+      </Grid>
     </Center>
   );
 };

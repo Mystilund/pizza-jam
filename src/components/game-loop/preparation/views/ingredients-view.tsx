@@ -37,7 +37,7 @@ export const PreparationIngredientsView = ({
       overflow="auto"
       sx={{ ...ScrollbarStyle }}
       p="20px"
-      bg={`url("${CDN_URL}/images/preparation-ingredients-view-bg.jpg")`}
+      bg={`url("${CDN_URL}/images/bg-day.jpg")`}
       backgroundSize="contain"
     >
       <Flex position="relative" py="20px" alignItems="flex-start">

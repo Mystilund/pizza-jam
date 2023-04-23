@@ -16,7 +16,7 @@ export const Workspace = () => {
         position="absolute"
         inset={0}
         zIndex={1}
-        bg={`url("${CDN_URL}/images/game-background-bg.png")`}
+        bg={`url("${CDN_URL}/images/kitchen-render-back.jpg")`}
         bgSize="contain"
       />
       <Box
@@ -35,7 +35,7 @@ export const Workspace = () => {
         position="absolute"
         inset={0}
         zIndex={3}
-        bg={`url("${CDN_URL}/images/game-front-bg.png")`}
+        bg={`url("${CDN_URL}/images/kitchen-render-front.png")`}
         bgSize="contain"
       />
     </>

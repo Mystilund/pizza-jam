@@ -7,7 +7,7 @@ import { IngredientsExplanationModal } from './ingredients-explanation-modal';
 import { SatisfactionExplanationModal } from './satisfaction-explanation-modal';
 
 export const HelpCard = () => (
-  <Infobox title="Help">
+  <Infobox title="Help" maxW="320px">
     <Flex
       flex={1}
       flexDir="column"

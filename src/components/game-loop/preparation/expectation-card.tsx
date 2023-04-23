@@ -13,7 +13,7 @@ export const ExpectationCard = () => {
   const [minPizzaTime, maxPizzaTime] = calcTimePerPizzaFromRange(clientRange);
 
   return (
-    <Infobox title="Expectation">
+    <Infobox title="Expectation" maxW="320px">
       <Flex flex={1} flexDir="column" gap={2} justifyContent="space-evenly">
         <HStack>
           <User />

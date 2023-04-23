@@ -16,9 +16,14 @@ import {
   getSkinColor,
   pickNumberInRange,
 } from '../utils/calculator';
-import { PAUSE_MUSIC_EVENT, RESUME_MUSIC_EVENT } from '../utils/constants';
+import {
+  PAUSE_MUSIC_EVENT,
+  PLAY_SOUND_EVENT,
+  RESUME_MUSIC_EVENT,
+} from '../utils/constants';
 import {
   ArrayElement,
+  AudioAssetUrl,
   GameData,
   Ingredients,
   Recipe,
@@ -97,6 +102,7 @@ export const CookProvider = ({ children }: CookContextProps) => {
   useEffect(() => {
     const optionMenu = (e: KeyboardEvent) => {
       if (e.code === 'Escape') {
+        e.stopPropagation();
         setIsGamePaused.toggle();
         setPauseState(Scene.SETTINGS);
       }
@@ -159,6 +165,12 @@ export const CookProvider = ({ children }: CookContextProps) => {
       }
 
       setClients(newClientData);
+
+      window.dispatchEvent(
+        new CustomEvent<{ value: AudioAssetUrl }>(PLAY_SOUND_EVENT, {
+          detail: { value: 'use-ingredient-sound.ogg' },
+        })
+      );
     }
   };
 
@@ -192,6 +204,12 @@ export const CookProvider = ({ children }: CookContextProps) => {
 
     ++usedIngredientsCopy[ingredient];
     setUsedIngredients(usedIngredientsCopy);
+
+    window.dispatchEvent(
+      new CustomEvent<{ value: AudioAssetUrl }>(PLAY_SOUND_EVENT, {
+        detail: { value: 'no-ingredient.wav' },
+      })
+    );
   };
 
   const providerParameters = {

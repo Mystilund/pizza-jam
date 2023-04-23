@@ -35,7 +35,7 @@ export const GaugeCard = ({
   );
 
   return (
-    <Infobox justifyContent="center">
+    <Infobox justifyContent="center" w="100%" maxW="500px">
       <Grid w="100%" templateColumns="max-content 1fr" gap={2}>
         <Gauge
           label={`Satisfaction (${displaySignedNumber(satisfactionEarned)})`}

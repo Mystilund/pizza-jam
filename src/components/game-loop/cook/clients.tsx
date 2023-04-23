@@ -2,6 +2,8 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 import { useCook } from '../../../contexts/cook-context';
+import { PLAY_SOUND_EVENT } from '../../../utils/constants';
+import { AudioAssetUrl } from '../../../utils/types';
 import { Client } from '../../icons/icons';
 
 const CLIENT_WIDTH_PERCENTAGE = 19.8;
@@ -13,15 +15,24 @@ export const Clients = () => {
   const [widthClient, setWidthClient] = useState(300);
 
   useEffect(() => {
-    const gameContainer = document.querySelector('#game-container');
+    const getClientWidth = () => {
+      const gameContainer = document.querySelector('#game-container');
 
-    if (gameContainer) {
-      setWidthClient(
-        (gameContainer.getBoundingClientRect().width *
-          CLIENT_WIDTH_PERCENTAGE) /
-          100
-      );
-    }
+      if (gameContainer) {
+        setWidthClient(
+          (gameContainer.getBoundingClientRect().width *
+            CLIENT_WIDTH_PERCENTAGE) /
+            100
+        );
+      }
+    };
+
+    getClientWidth();
+    window.addEventListener('resize', getClientWidth);
+
+    return () => {
+      window.removeEventListener('resize', getClientWidth);
+    };
   }, []);
 
   useEffect(() => {
@@ -34,13 +45,23 @@ export const Clients = () => {
     );
   }, [currentIndex, widthClient]);
 
+  useEffect(() => {
+    if (currentIndex !== 0) {
+      window.dispatchEvent(
+        new CustomEvent<{ value: AudioAssetUrl }>(PLAY_SOUND_EVENT, {
+          detail: { value: 'footstep.ogg' },
+        })
+      );
+    }
+  }, [currentIndex]);
+
   return (
     <Box position="absolute" left="6%" right="6%" top={0} zIndex={2} h="64.8%">
       <Flex
         position="absolute"
         left={left}
         bottom={0}
-        transition={`left ease ${hasGameStarted ? '.8s' : '4.5s'}`}
+        transition={`left ease ${hasGameStarted ? '1.2s' : '4.5s'}`}
         alignItems="center"
         gap={4}
       >

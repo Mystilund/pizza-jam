@@ -24,10 +24,11 @@ export const imgAssets = [
   'menu-bg.jpg',
   'pizza-recipe-bg.jpg',
   'wood-loop-bg.jpg',
-  'preparation-main-view-bg.jpg',
-  'preparation-ingredients-view-bg.jpg',
-  'game-background-bg.png',
-  'game-front-bg.png',
+  'bg-cook.jpg',
+  'bg-day.jpg',
+  'bg-night.jpg',
+  'kitchen-render-back.jpg',
+  'kitchen-render-front.png',
   'game-metal-shutter.png',
   'beef.png',
   'blue-cheese.png',
@@ -54,8 +55,10 @@ export const imgAssets = [
 export const audioAssets = [
   'funiculi-funicula.mp3',
   'tarantela-napolitana.mp3',
-  'shop-door-bell-sound.mp3',
+  'use-ingredient-sound.ogg',
   'test-beep.mp3',
+  'no-ingredient.wav',
+  'footstep.ogg',
 ] as const;
 
 export const validKeyboardKey = [
@@ -159,7 +162,7 @@ export const SatisfactionClientNumberLinks: Array<Array<[number, number]>> = [
     [26, 28],
   ],
   [
-    [90, 100],
+    [90, 300],
     [28, 30],
   ],
 ];

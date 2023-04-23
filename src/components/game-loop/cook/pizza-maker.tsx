@@ -2,6 +2,7 @@ import { Box, Button, Divider, Flex, Text } from '@chakra-ui/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useCook } from '../../../contexts/cook-context';
+import { ScrollbarStyle } from '../../../theme/components/generic-style';
 import { IngredientsPerRecipe } from '../../../utils/constants';
 import { Ingredients } from '../../../utils/types';
 import { OrderTicketPizza } from '../order-ticket-pizza';
@@ -160,6 +161,11 @@ export const PizzaMaker = () => {
           right="10px"
           bg="gray.200"
           p="20px"
+          maxH="68%"
+          overflowY="auto"
+          sx={{
+            ...ScrollbarStyle,
+          }}
         >
           <OrderTicketPizza
             recipe={currentClient.expectation}

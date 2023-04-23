@@ -91,7 +91,7 @@ export const PreparationMainView = ({
       h="100%"
       w="100%"
       p="20px"
-      bg={`url("${CDN_URL}/images/preparation-main-view-bg.jpg")`}
+      bg={`url("${CDN_URL}/images/bg-cook.jpg")`}
       backgroundSize="cover"
     >
       <Flex gap={2} alignItems="center">
@@ -132,7 +132,7 @@ export const PreparationMainView = ({
         />
       </Flex>
       <Spacer />
-      <Flex justifyContent="space-evenly">
+      <Flex justifyContent="space-evenly" gap="20px" flexDir="column">
         <ExpectationCard />
         <HelpCard />
       </Flex>

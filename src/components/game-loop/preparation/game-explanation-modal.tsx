@@ -23,7 +23,7 @@ export const GameExplanationModal = () => {
     <>
       <Button
         variant="link"
-        color="inherit"
+        color="gold"
         _hover={{ textDecoration: 'underline' }}
         onClick={() => setIsModalOpen.on()}
       >

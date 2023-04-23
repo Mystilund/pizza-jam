@@ -15,7 +15,7 @@ export const GameFinishedSplash = () => {
 
   return (
     <Box
-      w="410px"
+      w="440px"
       h="180px"
       top="50%"
       left="50%"

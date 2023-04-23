@@ -171,6 +171,9 @@ export const CookProvider = ({ children }: CookContextProps) => {
           detail: { value: 'use-ingredient-sound.ogg' },
         })
       );
+      if (currentIndex + 1 === clients.length) {
+        finishGame();
+      }
     }
   };
 

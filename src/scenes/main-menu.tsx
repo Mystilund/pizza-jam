@@ -1,4 +1,5 @@
 import { AspectRatio, Button, Flex, Image } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { CenterBGLoop } from '../components/center-bg-loop';
 import { useGame } from '../contexts/game-context';
@@ -8,6 +9,7 @@ import { CDN_URL } from '../utils/constants';
 import { Scene } from '../utils/types';
 
 export const MainMenuScene = () => {
+  const { t } = useTranslation();
   const { goToScene } = useGame();
 
   usePlayMusicOnMount('funiculi-funicula.mp3');
@@ -32,14 +34,14 @@ export const MainMenuScene = () => {
           w="300px"
           onClick={() => goToScene(Scene.GAME_LOOP_PREPARATION)}
         >
-          Play
+          {t('mainMenu.startButton')}
         </Button>
         <Button
           variant="menu"
           w="300px"
           onClick={() => goToScene(Scene.SETTINGS)}
         >
-          Settings
+          {t('mainMenu.settingsButton')}
         </Button>
       </Flex>
     </CenterBGLoop>

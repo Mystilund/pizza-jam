@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Spacer } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../../../../contexts/game-context';
 import { useGameLoop } from '../../../../contexts/game-loop-context';
@@ -76,6 +77,7 @@ const GlowyButton = styled(Button)`
 export const PreparationMainView = ({
   onChangeView,
 }: PreparationMainViewProps) => {
+  const { t } = useTranslation();
   const { configuration, goToScene } = useGame();
   const { resetCart } = useGameLoop();
 
@@ -101,7 +103,7 @@ export const PreparationMainView = ({
           colorScheme="teal"
           onClick={() => goToScene(Scene.MAIN_MENU)}
         >
-          Back to menu
+          {t('backToMenu')}
         </Button>
         <Button
           border="2px solid"
@@ -109,7 +111,7 @@ export const PreparationMainView = ({
           colorScheme="orange"
           onClick={() => onChangeView(PreparationView.RECIPES_VIEW)}
         >
-          Recipes
+          {t('preparation.recipesButton')}
         </Button>
         <Button
           border="2px solid"
@@ -117,18 +119,22 @@ export const PreparationMainView = ({
           colorScheme="orange"
           onClick={() => onChangeView(PreparationView.INGREDIENTS_VIEW)}
         >
-          Ingredients
+          {t('preparation.ingredientsButton')}
         </Button>
         <ParallelogramBox
           ml="auto"
           Icon={Heart}
           iconColor="hotpink"
-          label={`Satisfaction : ${configuration.game.satisfaction}`}
+          label={t('preparation.satisfaction', {
+            total: configuration.game.satisfaction,
+          })}
         />
         <ParallelogramBox
           Icon={Coin}
           iconColor="gold"
-          label={`Money : ${configuration.game.money}`}
+          label={t('preparation.money', {
+            total: configuration.game.money,
+          })}
         />
       </Flex>
       <Spacer />
@@ -138,7 +144,9 @@ export const PreparationMainView = ({
       </Flex>
       <Spacer />
       <Box textAlign="center">
-        <GlowyButton onClick={goToGame}>Start a new day of work</GlowyButton>
+        <GlowyButton onClick={goToGame}>
+          {t('preparation.startGameButton')}
+        </GlowyButton>
       </Box>
     </Flex>
   );

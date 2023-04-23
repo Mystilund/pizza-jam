@@ -1,0 +1,158 @@
+{
+  "errorLoading": {
+    "line1": "Une erreur est arrivée en préchargeant les ressources visuelles et sonores",
+    "line2": "Cela peut venir de votre connexion, rafraichissez votre page ou revenez plus tard",
+    "line3": "Si ça ne fonctionne toujours pas, vous pouvez contacter <twitterLink>@LundProd</twitterLink> sur Twitter",
+    "button": "Je veux tout de même essayer de jouer avec les ressources manquantes"
+  },
+  "cook": {
+    "daysOver": "La journée est finie !",
+    "timer": "{{minutes}}:{{seconds}}",
+    "skip": "PASSER",
+    "send": "ENVOYER",
+    "space": "Espace"
+  },
+  "preparation": {
+    "stock": "Stock actuel : {{total}}",
+    "recipesButton": "Recettes",
+    "ingredientsButton": "Ingredients",
+    "startGameButton": "Démarrer un nouveau jour de travail",
+    "valueRequired": "{{value}} nécessaire",
+    "expectationTitle": "Attentes",
+    "helpTitle": "Aide",
+    "clientsEstimated": "Clients estimés : {{min}} - {{max}}",
+    "timePerPizza": "Temps par pizza: {{min}} - {{max}}s",
+    "timerNote": "Note: la durée d'une partie est toujours de {{duration}}s",
+    "cart": {
+      "cart": "Panier :",
+      "empty": "Vide !",
+      "totalCost": "Coût total : {{total}}",
+      "moneyLeft": "Argent restant : {{total}}",
+      "buyButton": "ACHETER"
+    },
+    "satisfaction": "Satisfaction : {{total}}",
+    "money": "Argent : {{total}}",
+    "help": {
+      "satisfaction": {
+        "button": "Satisfaction",
+        "line1": "La satisfaction cliente est une donnée qui augmente pour chaque client servi correctement.",
+        "line2": "Si vous loupez une pizza or que le temps finit avant que vous ne serviez tous les clients, la satisfaction baissera.",
+        "line3": "Vous pouvez avoir un bonus de satisfaction si vous faites une pizza pour chaque client lors de la journée.",
+        "line4": "Plus vous avez de satisfaction, plus vous aurez de clients. Ce permet aussi d'acheter de nouvelles recettes en cliquant sur le bouton <bold>Recettes</bold> en haut de l'écran.",
+        "clientSuccess": "Client servi correctement",
+        "bonus": "Bonus quand tous les clients sont servis à la fin de la journée",
+        "clientError": "Client non servi ou avec une pizza ratée"
+      },
+      "ingredients": {
+        "button": "Ingrédients",
+        "line1": "Pour faire une pizza, il vous faut des ingrédients. Si vous ne pouvez pas faire une pizza, les clients seront mécontents et vous perdrez de la satisfaction.",
+        "line2": "Votre argent est utile uniquement pour acheter des ingrédients et des recettes. Vous en gagnez après chaque pizza vendue.",
+        "line3": "Vous connaissez approximativement combien de personnes viendront dans votre restaurant chaque jour, vous pouvez donc vous préparer en conséquence. Vous savez aussi quelles sont les pizzas que vous avez débloqué, donc n'acheter pas du poulet si vous n'êtes pas capable de faire une pizza avec du poulet dedans.",
+        "line4": "Pour vérifier votre stock d'ingrédients et en acheter, vous pouvez cliquer sur le bouton <bold>ingrédients</bold> en haut de votre écran."
+      },
+      "gameExplanation": {
+        "button": "Comment jouer au jeu ?",
+        "title1": "Préparation",
+        "line1": "Tout d'abord, vous devez vous préparer. Comme expliqué dans la fenêtre ingrédient, vous devez acheter de quoi faire vos pizzas. Dépendamment l'estimation de clients venant ce jour et en fonction de vos recettes, vous pourrez acheter le bon nombre d'ingrédients et la bonne quantité.",
+        "title2": "Cuisiner et servir les clients",
+        "line2": "Une fois que vous êtes sûr d'être prêt, vous pouvez cliquer sur le bouton en bas de la page derrière cette fenêtre.",
+        "line3": "Les clients viendront, chacuns avec une requête précise. La recette est indiquée en haut à droite, vous avez vos ingrédients en bas. Vous devez cliquer sur les ingrédients ou appuyer sur la touche correspondante dans l'order pour faire la pizza. Si vous mettez le mauvais ingrédient (incluant ceux qui sont dans la recette mais qui n'est pas le suivant), le client sera faché. Vous pouvez faire 2 erreurs, si vous en faites une troisième le client partira.",
+        "line4": "Les ingrédients sont seulement retirés de votre réserve s'ils sont mis sur une pizza. Cela signifie que si un client part à cause de trop nombreuses erreurs, vous perdrez les ingrédients. Si pour certaines raisons vous ne vous êtes pas bien préparé et que vous ne pouvez pas faire certaines recettes par manque d'ingrédient, vous pouvez passer le client.",
+        "title3": "Fin de journée",
+        "line5": "La journée est terminée quand le temps atteint 0 ou si vous n'avez plus de clients.",
+        "line6": "Après une journée de travail, vous avez un résumé avec le total de satisfaction gagnée/perdue, combien d'argents vous gagnez, et l'état de votre réserve.",
+        "line7": "Si vous préparez une pizza pour tous les clients, sans en avoir passé aucun ou sans client partant du restaurant, vous aurez un bonus de satisfaction. Si le temps atteint 0 mais qu'il reste des clients, ils sont considérés comme passés",
+        "line8": "Ensuite, vous pouvez repartir en cuisiner préparer un nouveau jour, acheter des nouveaux ingrédients et peut-être même débloquer de nouvelles recettes !"
+      }
+    }
+  },
+  "summary": {
+    "satisfaction": "Satisfaction ({{value}})",
+    "money": "Argent (+{{value}})",
+    "success": "Pizza réussie ({{value}}%)",
+    "bonus": "Bonus débloqué !",
+    "noBonus": "Bonus non débloqué",
+    "statsTitle": "Statistiques",
+    "summaryTitle": "Résumé",
+    "totalClient": "Nombre total de clients : <bold>{{total}}</bold>",
+    "skippedClients": "Nombre de clients passés : <bold>{{total}}</bold>",
+    "missedPizza": "Nombre de pizzas loupées : <bold>{{total}}</bold>",
+    "successPizza": "Nombre de pizzas réussies : <bold>{{total}}</bold>",
+    "totalMoney": "Argent total après la partie : {{total}}",
+    "totalSatisfaction": "Satisfaction totale après la partie : {{total}}"
+  },
+  "mainMenu": {
+    "startButton": "Jouer",
+    "settingsButton": "Paramètres"
+  },
+  "settingsMenu": {
+    "language": "Langue",
+    "en": "Anglais",
+    "fr": "Français",
+    "generalVolume": "Volume général ({{percentage}}%)",
+    "musicVolume": "Volume musique ({{percentage}}%)",
+    "soundVolume": "Volume bruitage ({{percentage}}%)",
+    "mute": "Rendre muet",
+    "resetSave": "Réinitialiser la sauvegarde ?",
+    "reset": {
+      "modalHeader": "Êtes vous sûr ?",
+      "modalBody": "Une fois que vous validez, toute votre progression sera réinitialisée.",
+      "submitButton": "Je suis sûr !"
+    },
+    "keyboardTitle": "Configuration clavier :",
+    "keyboardButton": "Paramètres clavier",
+    "resetKeyboard": "Réinitialiser",
+    "keyboardOverlay": {
+      "alreadyAssigned": "La touche est déjà assigné à un autre ingrédient",
+      "invalid": "La touche est invalide, n'utilisez que des caractères alphanumériques",
+      "assign": "Assigner une touche",
+      "pressAlphaKey": "Appuyez sur n'importe quel caractère alphanumériques pour assigner le raccourci",
+      "pressEsc": "Appuyez sur Echap pour annuler"
+    }
+  },
+  "ingredients": {
+    "pineapple": "Ananas",
+    "beef": "Boeuf",
+    "blueCheese": "Fromage bleu",
+    "chicken": "Poulet",
+    "creamSauce": "Creme",
+    "dough": "Pate",
+    "goatCheese": "Fromage de chèvre",
+    "ham": "Jambon",
+    "honey": "Miel",
+    "cheese": "Fromage",
+    "mushrooms": "Champignons",
+    "olives": "Olives",
+    "onions": "Oignons",
+    "herbs": "Origan",
+    "pepperoni": "Pepperoni",
+    "peppers": "Poivrons",
+    "potatos": "Pomme de terre",
+    "salmon": "Saumon",
+    "tomatoSauce": "Sauce tomate",
+    "tuna": "Thon"
+  },
+  "recipes": {
+    "bollywood": "Bollywood",
+    "cannibal": "Cannibal",
+    "carne": "Carne",
+    "country": "Campagnarde",
+    "fisherman": "Pizza du pêcheur",
+    "goatHoney": "Chèvre-Miel",
+    "hawai": "Hawaï",
+    "margherita": "Margherita",
+    "mexican": "Mexicaine",
+    "mountain": "Montagnarde",
+    "norwegian": "Norvégienne",
+    "seaPizza": "Pizza de la mer",
+    "regina": "Regina",
+    "threeCheese": "3 fromages",
+    "pepperoni": "Pepperoni",
+    "threeMeats": "3 viandes",
+    "veggie": "Veggie",
+    "verde": "Verde"
+  },
+  "back": "Retour",
+  "backToKitchen": "Retour en cuisine",
+  "backToMenu": "Retour au menu"
+}

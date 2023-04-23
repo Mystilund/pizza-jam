@@ -10,6 +10,7 @@ import {
   useBoolean,
 } from '@chakra-ui/react';
 import { Fragment, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../contexts/game-context';
 import { MenuStyle, ScrollbarStyle } from '../theme/components/generic-style';
@@ -24,6 +25,7 @@ type KeyboardSettingsViewProps = {
 };
 
 export const KeyboardSettingsView = ({ onBack }: KeyboardSettingsViewProps) => {
+  const { t } = useTranslation();
   const [selectedIngredient, setSelectedIngredient] =
     useState<Ingredients | null>(null);
   const [resetPressed, setResetPressed] = useBoolean(false);
@@ -68,12 +70,12 @@ export const KeyboardSettingsView = ({ onBack }: KeyboardSettingsViewProps) => {
         ...MenuStyle.menu.sx,
       }}
     >
-      <Heading variant="menu">Keyboard mapping :</Heading>
+      <Heading variant="menu">{t('settingsMenu.keyboardTitle')}</Heading>
       <Grid mb={3} templateColumns="1fr 60px" rowGap={1}>
         {ingredients.map((ingredient) => (
           <Fragment key={ingredient}>
             <GridItem alignSelf="center">
-              <Text>{translateIngredients(ingredient)}</Text>
+              <Text>{translateIngredients(t, ingredient)}</Text>
             </GridItem>
             <GridItem>
               <Input
@@ -103,10 +105,10 @@ export const KeyboardSettingsView = ({ onBack }: KeyboardSettingsViewProps) => {
             resetPressed ? <AnimatedCheckMarkCircleIcon size="sm" /> : undefined
           }
         >
-          Reset to default
+          {t('settingsMenu.resetKeyboard')}
         </Button>
         <Button variant="menu" flex={1} onClick={onBack}>
-          Back
+          {t('back')}
         </Button>
       </Flex>
       {!!selectedIngredient && (

@@ -1,5 +1,6 @@
 import { chakra, Grid, GridItem, Text } from '@chakra-ui/react';
 import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { IngredientsPerRecipe } from '../../utils/constants';
 import { translateIngredients } from '../../utils/translators';
@@ -18,6 +19,8 @@ export const OrderTicketPizza = ({
   onClose,
   ingredientsChecklist = [],
 }: OrderTicketProps) => {
+  const { t } = useTranslation();
+
   return (
     <OrderTicket title="Ingredients :" onClose={onClose}>
       <Grid
@@ -39,13 +42,13 @@ export const OrderTicketPizza = ({
                       : ''
                   }
                 >
-                  {translateIngredients(ingredient)}
+                  {translateIngredients(t, ingredient)}
                 </Text>
               </GridItem>
               <GridItem alignSelf="self-end">
                 <Icon
                   boxSize="24px"
-                  aria-label={translateIngredients(ingredient)}
+                  aria-label={translateIngredients(t, ingredient)}
                 />
               </GridItem>
               <GridItem alignSelf="self-end">

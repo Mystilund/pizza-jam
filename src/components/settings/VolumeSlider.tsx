@@ -26,9 +26,7 @@ export const VolumeSlider = ({
   return (
     <>
       <GridItem>
-        <Text>
-          {label} ({volume}%)
-        </Text>
+        <Text>{label}</Text>
       </GridItem>
       <GridItem>
         <Slider

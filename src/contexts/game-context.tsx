@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useLocalStorage } from 'react-use';
 
 import { defaultConfiguration } from '../utils/constants';
@@ -38,6 +39,7 @@ export const useGame = (): GameContextProvider => useContext(GameContext);
 
 //-- Exposed Provider
 export const GameProvider = ({ children }: GameContextProps) => {
+  const { i18n } = useTranslation();
   const [configuration, setConfiguration] = useLocalStorage<Configuration>(
     'GAME_CONFIGURATION',
     defaultConfiguration
@@ -45,6 +47,12 @@ export const GameProvider = ({ children }: GameContextProps) => {
   const [activeScene, setActiveScene] = useState<Scene>(Scene.MAIN_MENU);
   const [sceneOrder, setSceneOrder] = useState([Scene.MAIN_MENU]);
   const [[w, h, mt], setResolution] = useState(calculateViewport);
+
+  useEffect(() => {
+    if (configuration && i18n.language !== configuration.language) {
+      i18n.changeLanguage(configuration.language);
+    }
+  }, [configuration, i18n]);
 
   useEffect(() => {
     const handler = () => {

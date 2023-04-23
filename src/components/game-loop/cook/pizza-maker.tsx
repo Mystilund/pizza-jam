@@ -1,5 +1,6 @@
 import { Box, Button, Divider, Flex, Text } from '@chakra-ui/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useCook } from '../../../contexts/cook-context';
 import { ScrollbarStyle } from '../../../theme/components/generic-style';
@@ -10,6 +11,7 @@ import { Pizza } from '../pizza';
 import { IngredientButton } from './ingredient-button';
 
 export const PizzaMaker = () => {
+  const { t } = useTranslation();
   const {
     currentIndex,
     currentClient,
@@ -103,7 +105,7 @@ export const PizzaMaker = () => {
               colorScheme="red"
               onClick={onSkipClient}
             >
-              SKIP
+              {t('cook.skip')}
             </Button>
             <Button
               mt={3}
@@ -120,9 +122,9 @@ export const PizzaMaker = () => {
               h="auto"
               py={2}
             >
-              <Text>SEND</Text>
+              <Text>{t('cook.send')}</Text>
               <Divider my={1} />
-              <Text>(Space)</Text>
+              <Text>({t('cook.space')})</Text>
             </Button>
           </Box>
           <Pizza

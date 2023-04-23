@@ -1,104 +1,103 @@
+import { TFunction } from 'i18next';
+
 import { Ingredients, Language, Recipe } from './types';
 
-// @todo: use tFunc to translate
-export const translateLanguage = (lang: Language) => {
+export const translateLanguage = (t: TFunction, lang: Language) => {
   switch (lang) {
     case Language.EN:
-      return 'English';
+      return t('settingsMenu.en');
     case Language.FR:
-      return 'Français';
+      return t('settingsMenu.fr');
     default:
       return 'Ø';
   }
 };
-
 // @todo: use tFunc to translate
-export const translateIngredients = (ingredient: Ingredients) => {
+export const translateIngredients = (t: TFunction, ingredient: Ingredients) => {
   switch (ingredient) {
     case Ingredients.PINEAPPLE:
-      return 'Pineapple';
+      return t('ingredients.pineapple');
     case Ingredients.BEEF:
-      return 'Beef';
+      return t('ingredients.beef');
     case Ingredients.BLUE_CHEESE:
-      return 'Blue cheese';
+      return t('ingredients.blueCheese');
     case Ingredients.CHICKEN:
-      return 'Chicken';
+      return t('ingredients.chicken');
     case Ingredients.CREAM_SAUCE:
-      return 'Cream';
+      return t('ingredients.creamSauce');
     case Ingredients.DOUGH:
-      return 'Dough';
+      return t('ingredients.dough');
     case Ingredients.GOAT_CHEESE:
-      return 'Goat cheese';
+      return t('ingredients.goatCheese');
     case Ingredients.HAM:
-      return 'Ham';
+      return t('ingredients.ham');
     case Ingredients.HONEY:
-      return 'Honey';
+      return t('ingredients.honey');
     case Ingredients.CHEESE:
-      return 'Cheese';
+      return t('ingredients.cheese');
     case Ingredients.MUSHROOMS:
-      return 'Mushrooms';
+      return t('ingredients.mushrooms');
     case Ingredients.OLIVES:
-      return 'Olives';
+      return t('ingredients.olives');
     case Ingredients.ONIONS:
-      return 'Onions';
+      return t('ingredients.onions');
     case Ingredients.HERBS:
-      return 'Herbs';
+      return t('ingredients.herbs');
     case Ingredients.PEPPERONI:
-      return 'Pepperoni';
+      return t('ingredients.pepperoni');
     case Ingredients.PEPPERS:
-      return 'Peppers';
+      return t('ingredients.peppers');
     case Ingredients.POTATOS:
-      return 'Potatos';
+      return t('ingredients.potatos');
     case Ingredients.SALMON:
-      return 'Salmon';
+      return t('ingredients.salmon');
     case Ingredients.TOMATO_SAUCE:
-      return 'Tomato sauce';
+      return t('ingredients.tomatoSauce');
     case Ingredients.TUNA:
-      return 'Tuna';
+      return t('ingredients.tuna');
     default:
       return 'Ø';
   }
 };
 
-// @todo: use tFunc to translate
-export const translateRecipe = (recipe: Recipe) => {
+export const translateRecipe = (t: TFunction, recipe: Recipe) => {
   switch (recipe) {
     case Recipe.BOLLYWOOD:
-      return 'Bollywood';
+      return t('recipes.bollywood');
     case Recipe.CANNIBAL:
-      return 'Cannibal';
+      return t('recipes.cannibal');
     case Recipe.CARNE:
-      return 'Carne';
+      return t('recipes.carne');
     case Recipe.COUNTRY:
-      return 'Country';
+      return t('recipes.country');
     case Recipe.FISHERMAN:
-      return 'Fisherman';
+      return t('recipes.fisherman');
     case Recipe.GOAT_HONEY:
-      return 'Goat-Honey';
+      return t('recipes.goatHoney');
     case Recipe.HAWAI:
-      return 'Hawai';
+      return t('recipes.hawai');
     case Recipe.MARGHERITA:
-      return 'Margherita';
+      return t('recipes.margherita');
     case Recipe.MEXICAN:
-      return 'Mexican';
+      return t('recipes.mexican');
     case Recipe.MOUNTAIN:
-      return 'Mountain';
+      return t('recipes.mountain');
     case Recipe.NORWEGIAN:
-      return 'Norwegian';
+      return t('recipes.norwegian');
     case Recipe.OF_THE_SEA:
-      return 'Pizza of the sea';
+      return t('recipes.seaPizza');
     case Recipe.REGINA:
-      return 'Regina';
+      return t('recipes.regina');
     case Recipe.THREE_CHEESE:
-      return '3 cheese';
+      return t('recipes.threeCheese');
     case Recipe.PEPPERONI:
-      return 'Pepperoni';
+      return t('recipes.pepperoni');
     case Recipe.THREE_MEAT:
-      return '3 meats';
+      return t('recipes.threeMeats');
     case Recipe.VEGGIE:
-      return 'Veggie';
+      return t('recipes.veggie');
     case Recipe.VERDE:
-      return 'Verde';
+      return t('recipes.verde');
     default:
       return 'Ø';
   }

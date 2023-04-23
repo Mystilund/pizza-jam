@@ -1,0 +1,158 @@
+{
+  "errorLoading": {
+    "line1": "An error occured while pre-loading the assets",
+    "line2": "It may come from your connection, refresh or try later",
+    "line3": "If it's still not working, you can contact <twitterLink>@LundProd</twitterLink> on Twitter",
+    "button": "I still want to try even with broken assets"
+  },
+  "cook": {
+    "daysOver": "Day's over!",
+    "timer": "{{minutes}}:{{seconds}}",
+    "skip": "SKIP",
+    "send": "SEND",
+    "space": "Space"
+  },
+  "preparation": {
+    "stock": "Current stock: {{total}}",
+    "recipesButton": "Recipes",
+    "ingredientsButton": "Ingredients",
+    "startGameButton": "Start a new day of work",
+    "valueRequired": "{{value}} required",
+    "expectationTitle": "Expectations",
+    "helpTitle": "Help",
+    "clientsEstimated": "Clients estimated: {{min}} - {{max}}",
+    "timePerPizza": "Time per pizza: {{min}} - {{max}}s",
+    "timerNote": "Note: The duration of a round is always {{duration}}s",
+    "cart": {
+      "cart": "Cart:",
+      "empty": "Empty!",
+      "totalCost": "Total cost: {{total}}",
+      "moneyLeft": "Money left: {{total}}",
+      "buyButton": "BUY"
+    },
+    "satisfaction": "Satisfaction: {{total}}",
+    "money": "Money: {{total}}",
+    "help": {
+      "satisfaction": {
+        "button": "Satisfaction",
+        "line1": "The client satisfaction is a metric which increases for each client you served correctly.",
+        "line2": "If you miss a pizza or if the timer finish before you served all the clients, this satisfaction decreases.",
+        "line3": "You can have a satisfaction bonus if you make a pizza for each clients of the day.",
+        "line4": "The more you have satisfaction, the more you have clients. It also allows you to buy new recipes by clicking on the button <bold>Recipes</bold> on top of the screen.",
+        "clientSuccess": "Client successfully served",
+        "bonus": "Bonus when all client are served at the end of the day",
+        "clientError": "Client not served or with a bad pizza"
+      },
+      "ingredients": {
+        "button": "Ingredients",
+        "line1": "To make pizzas, you need some ingredients. If you can't make a pizza, the clients will not be happy, making you lose satisfaction.",
+        "line2": "Your money is only useful to pay for ingredients and buy recipes. You'll earn some after each pizza sell.",
+        "line3": "You know approximately how many people will come in your restaurant each day, so you can prepare accordingly. You also know what kind of pizza you unlocked, so don't buy chicken if you are not able to make any pizza with chicken in it.",
+        "line4": "To check your stock of ingredients and buy some, you can click on the button <bold>ingredients</bold> on top of the screen."
+      },
+      "gameExplanation": {
+        "button": "How do we play the game?",
+        "title1": "Preparation",
+        "line1": "First, you need to be prepared. As explained in the ingredient window, you'll need to buy some resources to be able to cook your pizza. Depending the estimation of clients coming for the day and depending what are the recipes you have, you'll be able to buy the right ingredients and the right quantity.",
+        "title2": "Cook & serve clients",
+        "line2": "Once you're sure you're prepared, you can click on the button at the bottom of the page behind this window.",
+        "line3": "The clients will come, each with a specific request. The recipe will be displayed on the top right, you have your ingredients at the bottom. You need to click on the ingredient or press the corresponding key in the right order to make the pizza. If you put a wrong ingredient (including one in the recipe but it's not the next one), the client will be mad. You can do 2 errors, if you do a third one the client go away.",
+        "line4": "The ingredients are only remove from your stock if you put them on a pizza. Meaning if a client leave the restaurant because you made too many mistakes, you'll lose the used ingredients. If for some reasons you don't prepare yourself properly and you can't do some recipes because of a lack of ingredients, you can skip clients.",
+        "title3": "End of the day",
+        "line5": "The day is over when the timer reach 0 or if there are no longer clients.",
+        "line6": "After a day of work, you'll have a summary with how many satisfaction you earned/lost, how many money you got, and what is the state of your stock.",
+        "line7": "If you cook a pizza for all the clients of the day, without any skip or client leaving, you have a bonus of satisfaction. If the timer reach 0 but there are still clients, they are considered as skipped ones.",
+        "line8": "And then you go back to your kitchen preparing a new day, purchasing new ingredients and maybe unlocking new recipes!"
+      }
+    }
+  },
+  "summary": {
+    "satisfaction": "Satisfaction ({{value}})",
+    "money": "Money (+{{value}})",
+    "success": "Pizza success ({{value}}%)",
+    "bonus": "Bonus unlocked!",
+    "noBonus": "Bonus not unlocked",
+    "statsTitle": "Statistics",
+    "summaryTitle": "Summary",
+    "totalClient": "Total clients: <bold>{{total}}</bold>",
+    "skippedClients": "Number of skipped client: <bold>{{total}}</bold>",
+    "missedPizza": "Number of missed pizza: <bold>{{total}}</bold>",
+    "successPizza": "Number of successful pizzas: <bold>{{total}}</bold>",
+    "totalMoney": "Total money after the run: {{total}}",
+    "totalSatisfaction": "Total satisfaction after the run: {{total}}"
+  },
+  "mainMenu": {
+    "startButton": "Play",
+    "settingsButton": "Settings"
+  },
+  "settingsMenu": {
+    "language": "Language",
+    "en": "English",
+    "fr": "French",
+    "generalVolume": "General volume ({{percentage}}%)",
+    "musicVolume": "Music volume ({{percentage}}%)",
+    "soundVolume": "Sound volume ({{percentage}}%)",
+    "mute": "Mute",
+    "resetSave": "Reset save?",
+    "reset": {
+      "modalHeader": "Are you sure?",
+      "modalBody": "Once you validate, all your progress will be reset.",
+      "submitButton": "I'm sure!"
+    },
+    "keyboardTitle": "Keyboard mapping:",
+    "keyboardButton": "Keyboard settings",
+    "resetKeyboard": "Reset to default",
+    "keyboardOverlay": {
+      "alreadyAssigned": "The key is already assigned to another ingredient",
+      "invalid": "The key is invalid, please press an alphanumeric key",
+      "assign": "Assign a key",
+      "pressAlphaKey": "Press any alphanumeric character to set the key as shortcut",
+      "pressEsc": "Press escape to cancel"
+    }
+  },
+  "ingredients": {
+    "pineapple": "Pineapple",
+    "beef": "Beef",
+    "blueCheese": "Blue cheese",
+    "chicken": "Chicken",
+    "creamSauce": "Cream",
+    "dough": "Dough",
+    "goatCheese": "Goat cheese",
+    "ham": "Ham",
+    "honey": "Honey",
+    "cheese": "Cheese",
+    "mushrooms": "Mushrooms",
+    "olives": "Olives",
+    "onions": "Onions",
+    "herbs": "Herbs",
+    "pepperoni": "Pepperoni",
+    "peppers": "Peppers",
+    "potatos": "Potatos",
+    "salmon": "Salmon",
+    "tomatoSauce": "Tomato sauce",
+    "tuna": "Tuna"
+  },
+  "recipes": {
+    "bollywood": "Bollywood",
+    "cannibal": "Cannibal",
+    "carne": "Carne",
+    "country": "Country",
+    "fisherman": "Fisherman",
+    "goatHoney": "Goat-Honey",
+    "hawai": "Hawaï",
+    "margherita": "Margherita",
+    "mexican": "Mexican",
+    "mountain": "Mountain",
+    "norwegian": "Norwegian",
+    "seaPizza": "Pizza of the sea",
+    "regina": "Regina",
+    "threeCheese": "3 cheese",
+    "pepperoni": "Pepperoni",
+    "threeMeats": "3 meats",
+    "veggie": "Veggie",
+    "verde": "Verde"
+  },
+  "back": "Back",
+  "backToKitchen": "Back in the kitchen",
+  "backToMenu": "Back to the menu"
+}

@@ -1,4 +1,5 @@
 import { Box, Grid, GridItem, Icon, Text } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../../../contexts/game-context';
 import { translateIngredients } from '../../../utils/translators';
@@ -7,20 +8,23 @@ import { Coin, Heart, IngredientIconMap } from '../../icons/icons';
 import { Infobox } from '../info-card';
 
 export const SummaryCard = () => {
+  const { t } = useTranslation();
   const { configuration } = useGame();
 
   return (
-    <Infobox title="Summary" minW="500px" h="auto">
+    <Infobox title={t('summary.summaryTitle') as string} minW="585px" h="auto">
       <Box pt="20px">
         <Box>
           <Text as="span">
-            Total money after the run : {configuration.game.money}
+            {t('summary.totalMoney', { total: configuration.game.money })}
           </Text>
           <Icon as={Coin} ml={1} color="gold" verticalAlign="text-bottom" />
         </Box>
         <Box>
           <Text as="span">
-            Total satisfaction after the run : {configuration.game.satisfaction}
+            {t('summary.totalSatisfaction', {
+              total: configuration.game.satisfaction,
+            })}
           </Text>
           <Icon as={Heart} ml={1} color="hotpink" verticalAlign="text-bottom" />
         </Box>
@@ -29,7 +33,7 @@ export const SummaryCard = () => {
             <GridItem key={ingredient}>
               <Icon as={IngredientIconMap[ingredient]} mr={1} />
               <Text as="span">
-                {translateIngredients(ingredient)} x
+                {translateIngredients(t, ingredient)} x
                 {configuration.game.ingredients[ingredient]}
               </Text>
             </GridItem>

@@ -1,4 +1,5 @@
 import { chakra, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Trans, useTranslation } from 'react-i18next';
 
 import { Infobox } from '../info-card';
 
@@ -15,8 +16,10 @@ export const StatsCard = ({
   clientsError,
   clientsSuccess,
 }: StatsCardProps) => {
+  const { t } = useTranslation();
+
   return (
-    <Infobox title="Statistics">
+    <Infobox title={t('summary.statsTitle') as string} w="100%" minW="350px">
       <UnorderedList
         flex={1}
         flexDir="column"
@@ -26,20 +29,40 @@ export const StatsCard = ({
         pl="15px"
       >
         <ListItem>
-          Total clients :{' '}
-          <chakra.strong color="orange.300">{totalClients}</chakra.strong>
+          <Trans
+            i18nKey="summary.totalClient"
+            values={{ total: totalClients }}
+            components={{
+              bold: <chakra.strong color="orange.300" />,
+            }}
+          />
         </ListItem>
         <ListItem>
-          Number of skipped client :{' '}
-          <chakra.strong color="orange.300">{clientsSkipped}</chakra.strong>
+          <Trans
+            i18nKey="summary.skippedClients"
+            values={{ total: clientsSkipped }}
+            components={{
+              bold: <chakra.strong color="orange.300" />,
+            }}
+          />
         </ListItem>
         <ListItem>
-          Number of missed pizza :{' '}
-          <chakra.strong color="orange.300">{clientsError}</chakra.strong>
+          <Trans
+            i18nKey="summary.missedPizza"
+            values={{ total: clientsError }}
+            components={{
+              bold: <chakra.strong color="orange.300" />,
+            }}
+          />
         </ListItem>
         <ListItem>
-          Number of successful pizzas :{' '}
-          <chakra.strong color="orange.300">{clientsSuccess}</chakra.strong>
+          <Trans
+            i18nKey="summary.successPizza"
+            values={{ total: clientsSuccess }}
+            components={{
+              bold: <chakra.strong color="orange.300" />,
+            }}
+          />
         </ListItem>
       </UnorderedList>
     </Infobox>

@@ -197,6 +197,7 @@ const Disclaimer = () => (
       English is not my native language so I'm sorry if there are mistakes in
       the text.
     </Text>
+    <Text>The game is optimized for Chrome.</Text>
     <Text mt={3}>
       For the tech side, the game is just using React & Chakra-UI. That's all.
     </Text>

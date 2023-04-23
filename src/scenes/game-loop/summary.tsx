@@ -1,4 +1,5 @@
 import { Box, Button, Center, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { GaugeCard } from '../../components/game-loop/summary/gauge-card';
 import { StatsCard } from '../../components/game-loop/summary/stats-card';
@@ -10,6 +11,7 @@ import { CDN_URL } from '../../utils/constants';
 import { Scene } from '../../utils/types';
 
 export const GameLoopSummaryScene = () => {
+  const { t } = useTranslation();
   const { goToScene } = useGame();
   const { summaryData } = useGameLoop();
 
@@ -63,7 +65,7 @@ export const GameLoopSummaryScene = () => {
                 colorScheme="orange"
                 onClick={() => goToScene(Scene.GAME_LOOP_PREPARATION)}
               >
-                Go back in the kitchen
+                {t('backToKitchen')}
               </Button>
             </Box>
             <Box>
@@ -71,7 +73,7 @@ export const GameLoopSummaryScene = () => {
                 colorScheme="teal"
                 onClick={() => goToScene(Scene.MAIN_MENU)}
               >
-                Go back to the menu
+                {t('backToMenu')}
               </Button>
             </Box>
           </Flex>

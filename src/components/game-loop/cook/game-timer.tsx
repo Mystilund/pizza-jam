@@ -1,5 +1,6 @@
-import { chakra, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useCook } from '../../../contexts/cook-context';
 import { ROUND_DURATION } from '../../../utils/constants';
@@ -9,6 +10,7 @@ type GameTimerProps = {
 };
 
 export const GameTimer = ({ onTimerEnd }: GameTimerProps) => {
+  const { t } = useTranslation();
   const { isGamePaused, isFinished } = useCook();
   const [countdown, setCountdown] = useState(ROUND_DURATION);
   const timer = useRef<NodeJS.Timer>();
@@ -49,9 +51,10 @@ export const GameTimer = ({ onTimerEnd }: GameTimerProps) => {
       zIndex={10}
       fontFamily="'AlarmClock', 'Lato', Arial, sans-serif"
     >
-      <chakra.span>{String(minutes).padStart(2, '0')}</chakra.span>
-      <chakra.span>:</chakra.span>
-      <chakra.span>{String(seconds).padStart(2, '0')}</chakra.span>
+      {t('cook.timer', {
+        minutes: String(minutes).padStart(2, '0'),
+        seconds: String(seconds).padStart(2, '0'),
+      })}
     </Text>
   );
 };

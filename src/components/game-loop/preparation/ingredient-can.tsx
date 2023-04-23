@@ -1,8 +1,10 @@
 import { Icon, Text } from '@chakra-ui/react';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { getIngredientColor } from '../../../utils/calculator';
 import { ingredientPrices } from '../../../utils/constants';
+import { translateIngredients } from '../../../utils/translators';
 import { Ingredients } from '../../../utils/types';
 import { Can, Coin, IngredientIconMap } from '../../icons/icons';
 
@@ -11,6 +13,7 @@ type IngredientCanProps = {
 };
 
 export const IngredientCan = ({ ingredient }: IngredientCanProps) => {
+  const { t } = useTranslation();
   const ingredientColorMap = useMemo(getIngredientColor, []);
 
   return (
@@ -38,6 +41,16 @@ export const IngredientCan = ({ ingredient }: IngredientCanProps) => {
           verticalAlign="middle"
           color="yellow.500"
         />
+      </Text>
+      <Text
+        position="absolute"
+        left="50%"
+        transform="translateX(-50%) translateY(-50%)"
+        top="50px"
+        textAlign="center"
+        fontWeight="bold"
+      >
+        {translateIngredients(t, ingredient)}
       </Text>
     </>
   );

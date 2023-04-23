@@ -10,11 +10,13 @@ import {
   Text,
   useBoolean,
 } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../../contexts/game-context';
 import { defaultConfiguration } from '../../utils/constants';
 
 export const ResetSave = () => {
+  const { t } = useTranslation();
   const { configuration, setConfiguration } = useGame();
   const [isModalOpen, setIsModalOpen] = useBoolean(false);
 
@@ -37,7 +39,7 @@ export const ResetSave = () => {
           variant="link"
           onClick={() => setIsModalOpen.on()}
         >
-          Reset save ?
+          {t('settingsMenu.resetSave')}
         </Button>
       </GridItem>
       <Modal
@@ -47,9 +49,9 @@ export const ResetSave = () => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Are you sure ?</ModalHeader>
+          <ModalHeader>{t('settingsMenu.reset.modalHeader')}</ModalHeader>
           <ModalBody>
-            <Text>Once you validate, all your progress will be reset.</Text>
+            <Text>{t('settingsMenu.reset.modalBody')}</Text>
           </ModalBody>
           <ModalFooter>
             <Button
@@ -57,10 +59,10 @@ export const ResetSave = () => {
               mr={2}
               onClick={() => setIsModalOpen.off()}
             >
-              Back
+              {t('back')}
             </Button>
             <Button colorScheme="green" onClick={reset}>
-              I'm sure!
+              {t('settingsMenu.reset.submitButton')}
             </Button>
           </ModalFooter>
         </ModalContent>

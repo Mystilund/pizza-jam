@@ -1,5 +1,6 @@
 import { Flex, Heading, Text } from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../../contexts/game-context';
 import { validKeyboardKey } from '../../utils/constants';
@@ -16,9 +17,8 @@ export const KeyboardOverlay = ({
   onAssign,
   onCancel,
 }: KeyboardOverlayProps) => {
+  const { t } = useTranslation();
   const { configuration } = useGame();
-  // const [invalidKey, setInvalidKey] = useBoolean(false);
-  // const [alreadyAssignedKeyError, setAlreadyAssignedKeyError] = useBoolean(false);
   const [error, setError] = useState<ErrorType | null>(null);
 
   useEffect(() => {
@@ -55,13 +55,13 @@ export const KeyboardOverlay = ({
   const errorMsg = useMemo(() => {
     switch (error) {
       case 'alreadyAssigned':
-        return 'The key is already assigned to another ingredient';
+        return t('settingsMenu.keyboardOverlay.alreadyAssigned');
       case 'invalid':
-        return 'The key is invalid, please press an alphanumeric key';
+        return t('settingsMenu.keyboardOverlay.invalid');
       default:
         return null;
     }
-  }, [error]);
+  }, [error, t]);
 
   return (
     <Flex
@@ -72,9 +72,11 @@ export const KeyboardOverlay = ({
       justifyContent="center"
       flexDir="column"
     >
-      <Heading variant="menu">Assign a key</Heading>
-      <Text>Press any alphanumeric character to set the key as shortcut</Text>
-      <Text>Press escape to cancel</Text>
+      <Heading variant="menu">
+        {t('settingsMenu.keyboardOverlay.assign')}
+      </Heading>
+      <Text>{t('settingsMenu.keyboardOverlay.pressAlphaKey')}</Text>
+      <Text>{t('settingsMenu.keyboardOverlay.pressEsc')}</Text>
       {!!errorMsg && (
         <Text mt={3} color="red.500">
           {errorMsg}

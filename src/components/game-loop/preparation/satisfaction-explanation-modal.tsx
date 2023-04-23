@@ -13,6 +13,7 @@ import {
   Text,
   useBoolean,
 } from '@chakra-ui/react';
+import { Trans, useTranslation } from 'react-i18next';
 
 import {
   SATISFACTION_EARN_PER_CLIENT,
@@ -22,6 +23,7 @@ import {
 import { Heart } from '../../icons/icons';
 
 export const SatisfactionExplanationModal = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useBoolean(false);
 
   return (
@@ -32,7 +34,7 @@ export const SatisfactionExplanationModal = () => {
         _hover={{ textDecoration: 'underline' }}
         onClick={() => setIsModalOpen.on()}
       >
-        Satisfaction
+        {t('preparation.help.satisfaction.button')}
       </Button>
       <Modal
         isOpen={isModalOpen}
@@ -48,39 +50,30 @@ export const SatisfactionExplanationModal = () => {
           border="1px solid"
           borderColor="gray.400"
         >
-          <ModalHeader>Satisfaction</ModalHeader>
+          <ModalHeader>{t('preparation.help.satisfaction.button')}</ModalHeader>
           <ModalBody>
-            <Text>
-              The client satisfaction is a metric which increases for each
-              client you served correctly.
-            </Text>
+            <Text>{t('preparation.help.satisfaction.line1')}</Text>
+            <Text mt={1}>{t('preparation.help.satisfaction.line2')}</Text>
+            <Text mt={1}>{t('preparation.help.satisfaction.line3')}</Text>
             <Text mt={1}>
-              If you miss a pizza or if the timer finish before you served all
-              the clients, this satisfaction decreases.
-            </Text>
-            <Text mt={1}>
-              You can have a satisfaction bonus if you make a pizza for each
-              clients of the day.
-            </Text>
-            <Text mt={1}>
-              The more you have satisfaction, the more you have clients. It also
-              allows you to buy new recipes by clicking on the button
-              <chakra.strong color="orange.300"> Recipes</chakra.strong> on top
-              of the screen.
+              <Trans
+                i18nKey="preparation.help.satisfaction.line4"
+                components={{
+                  bold: <chakra.strong color="orange.300" />,
+                }}
+              />
             </Text>
             <Divider my={4} />
             <Box textAlign="center">
               <Box>
-                <Text>Client successfully served</Text>
+                <Text>{t('preparation.help.satisfaction.clientSuccess')}</Text>
                 <HStack justifyContent="center">
                   <Text fontWeight="bold">+{SATISFACTION_EARN_PER_CLIENT}</Text>
                   <Heart color="green" />
                 </HStack>
               </Box>
               <Box mt={3}>
-                <Text>
-                  Bonus when all client are served at the end of the day
-                </Text>
+                <Text>{t('preparation.help.satisfaction.bonus')}</Text>
                 <HStack justifyContent="center">
                   <Text fontWeight="bold">
                     +{SATISFACTION_EARN_ROUND_FINISHED}
@@ -89,7 +82,7 @@ export const SatisfactionExplanationModal = () => {
                 </HStack>
               </Box>
               <Box mt={3}>
-                <Text>Client not served or with a bad pizza</Text>
+                <Text>{t('preparation.help.satisfaction.clientError')}</Text>
                 <HStack justifyContent="center">
                   <Text fontWeight="bold">-{SATISFACTION_LOST_PER_CLIENT}</Text>
                   <Heart color="red" />
@@ -99,7 +92,7 @@ export const SatisfactionExplanationModal = () => {
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="orange" onClick={() => setIsModalOpen.off()}>
-              Back
+              {t('back')}
             </Button>
           </ModalFooter>
         </ModalContent>

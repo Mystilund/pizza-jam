@@ -1,6 +1,7 @@
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Heading } from '@chakra-ui/react';
 import { useCallback, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../../../../contexts/game-context';
 import { PreparationView } from '../../../../scenes/game-loop/preparation';
@@ -25,6 +26,7 @@ type PreparationRecipesViewProps = {
 export const PreparationRecipesView = ({
   onChangeView,
 }: PreparationRecipesViewProps) => {
+  const { t } = useTranslation();
   const { configuration, setConfiguration } = useGame();
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
   const recipeNote = useRef<HTMLDivElement>(null);
@@ -72,18 +74,22 @@ export const PreparationRecipesView = ({
             leftIcon={<ArrowBackIcon />}
             onClick={() => onChangeView(PreparationView.MAIN_VIEW)}
           >
-            Back
+            {t('back')}
           </Button>
           <ParallelogramBox
             ml="auto"
             Icon={Heart}
             iconColor="hotpink"
-            label={`Satisfaction : ${configuration.game.satisfaction}`}
+            label={t('preparation.satisfaction', {
+              total: configuration.game.satisfaction,
+            })}
           />
           <ParallelogramBox
             Icon={Coin}
             iconColor="gold"
-            label={`Money : ${configuration.game.money}`}
+            label={t('preparation.money', {
+              total: configuration.game.money,
+            })}
           />
         </Flex>
         <Box flex={1} pt="20px">
@@ -109,7 +115,7 @@ export const PreparationRecipesView = ({
                       _hover={{}}
                     >
                       <Heading variant="cursive" fontSize="2em">
-                        {translateRecipe(recipe)}
+                        {translateRecipe(t, recipe)}
                       </Heading>
                       <Pizza
                         recipe={recipe}
@@ -129,7 +135,9 @@ export const PreparationRecipesView = ({
                           leftIcon={<Heart color="hotpink" />}
                           cursor="default"
                         >
-                          {recipeSatisfactionNeeded[recipe]} required
+                          {t('preparation.valueRequired', {
+                            value: recipeSatisfactionNeeded[recipe],
+                          })}
                         </Button>
                         <Button
                           colorScheme="green"
@@ -141,7 +149,9 @@ export const PreparationRecipesView = ({
                           }
                           onClick={() => buyRecipe(recipe)}
                         >
-                          {recipePrices[recipe]} required
+                          {t('preparation.valueRequired', {
+                            value: recipePrices[recipe],
+                          })}
                         </Button>
                       </Flex>
                     )}

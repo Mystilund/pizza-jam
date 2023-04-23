@@ -1,5 +1,6 @@
 import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, IconButton, Text } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../../../../contexts/game-context';
 import { useGameLoop } from '../../../../contexts/game-loop-context';
@@ -20,6 +21,7 @@ type PreparationIngredientsViewProps = {
 export const PreparationIngredientsView = ({
   onChangeView,
 }: PreparationIngredientsViewProps) => {
+  const { t } = useTranslation();
   const { configuration } = useGame();
   const { cart, addToCart, removeFromCart, removeOneFromCart } = useGameLoop();
 
@@ -54,7 +56,9 @@ export const PreparationIngredientsView = ({
             >
               <IngredientCan ingredient={ingredient} />
               <Text color="gray.300" textAlign="center">
-                Current stock : {configuration.game.ingredients[ingredient]}
+                {t('preparation.stock', {
+                  total: configuration.game.ingredients[ingredient],
+                })}
               </Text>
               <Flex justifyContent="center" gap="20px">
                 <IconButton
@@ -94,23 +98,28 @@ export const PreparationIngredientsView = ({
               colorScheme="orange"
               onClick={() => onChangeView(PreparationView.MAIN_VIEW)}
             >
-              Back
+              {t('back')}
             </Button>
             <ParallelogramBox
               ml="auto"
               mr={0}
               Icon={Coin}
               iconColor="gold"
-              label={`Money : ${configuration.game.money}`}
+              label={
+                t('preparation.money', {
+                  total: configuration.game.money,
+                }) as string
+              }
             />
           </Flex>
           <Box
             mt="20px"
             w="300px"
             maxH="500px"
-            overflow="auto"
+            overflowY="auto"
             background="gray.100"
             p="20px 10px"
+            sx={{ ...ScrollbarStyle }}
           >
             <OrderIngredientCart
               onRemoveIngredient={removeFromCart}

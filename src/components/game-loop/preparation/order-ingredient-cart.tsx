@@ -9,6 +9,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../../../contexts/game-context';
 import { useGameLoop } from '../../../contexts/game-loop-context';
@@ -27,19 +28,20 @@ export const OrderIngredientCart = ({
   ingredientsList,
   onRemoveIngredient,
 }: OrderIngredientCartProps) => {
+  const { t } = useTranslation();
   const { configuration } = useGame();
   const { buyCart, cart } = useGameLoop();
 
   if (Object.values(ingredientsList).length === 0) {
     return (
-      <OrderTicket title="Cart :">
-        <Text mt="26px">Empty !</Text>
+      <OrderTicket title={t('preparation.cart.cart')}>
+        <Text mt="26px">{t('preparation.cart.empty')}</Text>
       </OrderTicket>
     );
   }
 
   return (
-    <OrderTicket title="Cart :">
+    <OrderTicket title={t('preparation.cart.cart')}>
       <Grid
         mt="24px"
         templateColumns="max-content max-content max-content max-content"
@@ -54,12 +56,12 @@ export const OrderIngredientCart = ({
             return (
               <Fragment key={ingredient}>
                 <GridItem h="25px" pt="5px">
-                  <Text>{translateIngredients(ingredient)}</Text>
+                  <Text>{translateIngredients(t, ingredient)}</Text>
                 </GridItem>
                 <GridItem alignSelf="self-end">
                   <Icon
                     boxSize="24px"
-                    aria-label={translateIngredients(ingredient)}
+                    aria-label={translateIngredients(t, ingredient)}
                   />
                 </GridItem>
                 <GridItem h="25px" pt="5px">
@@ -81,7 +83,9 @@ export const OrderIngredientCart = ({
         )}
       </Grid>
       <Text mt="25px" h="25px" pt="5px">
-        <chakra.span>Total cost : {computeCartPrice(cart)}</chakra.span>
+        <chakra.span>
+          {t('preparation.cart.totalCost', { total: computeCartPrice(cart) })}
+        </chakra.span>
         <Icon
           as={Coin}
           boxSize="20px"
@@ -91,12 +95,19 @@ export const OrderIngredientCart = ({
       </Text>
       <Text h="25px" pt="5px">
         <chakra.span>
-          Money left : {configuration.game.money - computeCartPrice(cart)}
+          {t('preparation.cart.moneyLeft', {
+            total: configuration.game.money - computeCartPrice(cart),
+          })}
         </chakra.span>
         <Icon as={Coin} boxSize="20px" verticalAlign="sub" color="yellow.500" />
       </Text>
-      <Button mt="30px" colorScheme="green" onClick={buyCart}>
-        BUY
+      <Button
+        fontFamily="Lato, Arial, sans-serif"
+        mt="30px"
+        colorScheme="green"
+        onClick={buyCart}
+      >
+        {t('preparation.cart.buyButton')}
       </Button>
     </OrderTicket>
   );

@@ -1,5 +1,6 @@
 import { Box, chakra, shouldForwardProp } from '@chakra-ui/react';
 import { isValidMotionProp, motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const ChakraBox = chakra(motion.div, {
   /**
@@ -10,9 +11,11 @@ const ChakraBox = chakra(motion.div, {
 });
 
 export const GameFinishedSplash = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
-      w="390px"
+      w="410px"
       h="180px"
       top="50%"
       left="50%"
@@ -39,7 +42,7 @@ export const GameFinishedSplash = () => {
         color="orange.300"
         textShadow="0 0 10px #000"
       >
-        Day's over !
+        {t('cook.daysOver')}
       </ChakraBox>
     </Box>
   );

@@ -1,4 +1,5 @@
 import { Box, Button, Checkbox, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { useGame } from '../contexts/game-context';
 import { MenuStyle } from '../theme/components/generic-style';
@@ -20,12 +21,15 @@ export const SettingsView = ({
   withReset = false,
 }: SettingsViewProps) => {
   const { configuration, setConfiguration } = useGame();
+  const { t, i18n } = useTranslation();
 
-  const onLanguageChange = (value: Language) =>
+  const onLanguageChange = (value: Language) => {
+    i18n.changeLanguage(value);
     setConfiguration({
       ...configuration,
       language: value,
     });
+  };
   const onGlobalVolumeChange = (value: number) =>
     setConfiguration({
       ...configuration,
@@ -67,17 +71,23 @@ export const SettingsView = ({
           onChange={onLanguageChange}
         />
         <VolumeSlider
-          label="General volume"
+          label={t('settingsMenu.generalVolume', {
+            percentage: configuration.globalVolume,
+          })}
           volume={configuration.globalVolume}
           onChange={onGlobalVolumeChange}
         />
         <VolumeSlider
-          label="Music volume"
+          label={t('settingsMenu.musicVolume', {
+            percentage: configuration.musicVolume,
+          })}
           volume={configuration.musicVolume}
           onChange={onMusicVolumeChange}
         />
         <VolumeSlider
-          label="Sound volume"
+          label={t('settingsMenu.soundVolume', {
+            percentage: configuration.soundVolume,
+          })}
           volume={configuration.soundVolume}
           onChange={onSoundVolumeChange}
           onChangeEnd={testSound}
@@ -89,17 +99,17 @@ export const SettingsView = ({
             isChecked={configuration.muted}
             onChange={onMuteToggle}
           >
-            Mute
+            {t('settingsMenu.mute')}
           </Checkbox>
         </GridItem>
         {withReset && <ResetSave />}
       </Grid>
       <Flex gap="40px">
         <Button variant="menu" flex={1} onClick={onKeyboardMenu}>
-          Keyboard settings
+          {t('settingsMenu.keyboardButton')}
         </Button>
         <Button variant="menu" flex={1} onClick={onBack}>
-          Back
+          {t('back')}
         </Button>
       </Flex>
     </Box>

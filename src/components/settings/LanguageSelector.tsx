@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { chakra, Flex, GridItem, IconButton, Text } from '@chakra-ui/react';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { translateLanguage } from '../../utils/translators';
 import { Language } from '../../utils/types';
@@ -36,6 +37,7 @@ export const LanguageSelector = ({
   value,
   onChange,
 }: LanguageSelectorProps) => {
+  const { t } = useTranslation();
   const languages = Object.values(Language);
   const langIndex = useRef(languages.findIndex((lang) => lang === value));
 
@@ -59,7 +61,7 @@ export const LanguageSelector = ({
 
   return (
     <>
-      <GridItem>Language :</GridItem>
+      <GridItem>{t('settingsMenu.language')} :</GridItem>
       <GridItem>
         <Flex alignItems="center">
           <LanguageIconButton
@@ -67,17 +69,15 @@ export const LanguageSelector = ({
             icon={<ChevronLeftIcon />}
             aria-label="Previous language"
             onClick={previousLanguage}
-            isDisabled // @todo: enable when translations are set
           />
           <Text flex={1} textAlign="center">
-            {translateLanguage(value)}
+            {translateLanguage(t, value)}
           </Text>
           <LanguageIconButton
             variant="outline"
             icon={<ChevronRightIcon />}
             aria-label="Next language"
             onClick={nextLanguage}
-            isDisabled // @todo: enable when translations are set
           />
         </Flex>
       </GridItem>

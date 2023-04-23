@@ -11,10 +11,12 @@ import {
   Text,
   useBoolean,
 } from '@chakra-ui/react';
+import { Trans, useTranslation } from 'react-i18next';
 
 import { Cheese, Chicken, Salmon, Tomato } from '../../icons/icons';
 
 export const IngredientsExplanationModal = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useBoolean(false);
 
   return (
@@ -25,7 +27,7 @@ export const IngredientsExplanationModal = () => {
         _hover={{ textDecoration: 'underline' }}
         onClick={() => setIsModalOpen.on()}
       >
-        Ingredients
+        {t('preparation.help.ingredients.button')}
       </Button>
       <Modal
         isOpen={isModalOpen}
@@ -41,45 +43,41 @@ export const IngredientsExplanationModal = () => {
           border="1px solid"
           borderColor="gray.400"
         >
-          <ModalHeader>Ingredients</ModalHeader>
+          <ModalHeader>{t('preparation.help.ingredients.button')}</ModalHeader>
           <ModalBody>
             <Text>
               <Icon as={Cheese} viewBox="10px" verticalAlign="center" mr={1} />
               <chakra.span>
-                To make pizzas, you need some ingredients. If you can't make a
-                pizza, the clients will not be happy, making you lose
-                satisfaction.
+                {t('preparation.help.ingredients.line1')}
               </chakra.span>
             </Text>
             <Text mt={2}>
               <Icon as={Tomato} viewBox="10px" verticalAlign="center" mr={1} />
               <chakra.span>
-                Your money is only useful to pay for ingredients and buy
-                recipes. You'll earn some after each pizza sell.
+                {t('preparation.help.ingredients.line2')}
               </chakra.span>
             </Text>
             <Text mt={2}>
               <Icon as={Chicken} viewBox="10px" verticalAlign="center" mr={1} />
               <chakra.span>
-                You know approximately how many people will come in your
-                restaurant each day, so you can prepare accordingly. You also
-                know what kind of pizza you unlocked, so don't buy chicken if
-                you are not able to make any pizza with chicken in it.
+                {t('preparation.help.ingredients.line3')}
               </chakra.span>
             </Text>
             <Text mt={2}>
               <Icon as={Salmon} viewBox="10px" verticalAlign="center" mr={1} />
               <chakra.span>
-                To check your stock of ingredients and buy some, you can click
-                on the button{' '}
-                <chakra.strong color="orange.300">ingredients</chakra.strong> on
-                top of the screen.
+                <Trans
+                  i18nKey="preparation.help.ingredients.line4"
+                  components={{
+                    bold: <chakra.strong color="orange.300" />,
+                  }}
+                />
               </chakra.span>
             </Text>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="orange" onClick={() => setIsModalOpen.off()}>
-              Back
+              {t('back')}
             </Button>
           </ModalFooter>
         </ModalContent>

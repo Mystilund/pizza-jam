@@ -1,4 +1,5 @@
 import { Grid, GridItem, Icon, Text } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { floatRound } from '../../../utils/calculator';
 import {
@@ -26,6 +27,7 @@ export const GaugeCard = ({
   moneyRatio,
   hasBonus,
 }: GaugeCardProps) => {
+  const { t } = useTranslation();
   const clientSatisfied = floatRound((clientsSuccess / totalClients) * 100);
   const satisfactionPercentage = floatRound(
     (satisfactionEarned /
@@ -38,21 +40,27 @@ export const GaugeCard = ({
     <Infobox justifyContent="center" w="100%" maxW="500px">
       <Grid w="100%" templateColumns="max-content 1fr" gap={2}>
         <Gauge
-          label={`Satisfaction (${displaySignedNumber(satisfactionEarned)})`}
+          label={t('summary.satisfaction', {
+            value: displaySignedNumber(satisfactionEarned),
+          })}
           icon={<Icon as={Heart} mr={2} verticalAlign="middle" />}
           labelColor="hotpink"
           colorScheme="pink"
           percentage={Math.max(satisfactionPercentage, 0)}
         />
         <Gauge
-          label={`Money (+${moneyEarned})`}
+          label={t('summary.money', {
+            value: moneyEarned,
+          })}
           icon={<Icon as={Coin} mr={2} verticalAlign="middle" />}
           labelColor="gold"
           colorScheme="yellow"
           percentage={moneyRatio * 100}
         />
         <Gauge
-          label={`Pizza success (${clientSatisfied}%)`}
+          label={t('summary.success', {
+            value: clientSatisfied,
+          })}
           icon={<Icon as={User} mr={2} verticalAlign="middle" />}
           labelColor={
             clientSatisfied >= 80
@@ -72,7 +80,7 @@ export const GaugeCard = ({
         />
         <GridItem colSpan={2} mt="20px">
           <Text textAlign="center" color="white" fontWeight="bold">
-            {hasBonus ? 'Bonus unlocked !' : 'Bonus not unlocked'}
+            {hasBonus ? t('summary.bonus') : t('summary.noBonus')}
           </Text>
         </GridItem>
       </Grid>

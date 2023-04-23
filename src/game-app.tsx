@@ -8,12 +8,14 @@ import {
   useBoolean,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 
 import { AssetsManager } from './managers/assets-manager';
 import { AudioManager } from './managers/audio-manager';
 import { SceneManager } from './managers/scene-manager';
 
 export const GameApp = () => {
+  const { t } = useTranslation();
   const [isReady, setIsReady] = useBoolean(false);
   const [hasError, setHasError] = useBoolean(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
@@ -27,14 +29,17 @@ export const GameApp = () => {
   if (!isReady && hasError) {
     return (
       <Center w="100%" h="100%" color="white" bg="gray.900" flexDir="column">
-        <Text>An error occured while pre-loading the assets</Text>
-        <Text>It may come from your connection, refresh or try later</Text>
+        <Text>{t('errorLoading.line1')}</Text>
+        <Text>{t('errorLoading.line2')}</Text>
         <Text>
-          If it's still not working, you can contact{' '}
-          <Link href="https://twitter.com/LundProd" target="_blank">
-            @LundProd
-          </Link>{' '}
-          on Twitter
+          <Trans
+            i18nKey="errorLoading.line3"
+            components={{
+              twitterLink: (
+                <Link href="https://twitter.com/LundProd" target="_blank" />
+              ),
+            }}
+          />
         </Text>
         <Button
           mt={4}
@@ -44,7 +49,7 @@ export const GameApp = () => {
             setIsReady.on();
           }}
         >
-          I still want to try even with broken assets
+          {t('errorLoading.button')}
         </Button>
       </Center>
     );

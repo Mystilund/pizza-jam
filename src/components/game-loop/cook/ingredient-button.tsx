@@ -65,7 +65,13 @@ export const IngredientButton = ({
 
   return (
     <Button
-      onClick={() => onUseIngredient(ingredient)}
+      onClick={(e) => {
+        onUseIngredient(ingredient);
+        // the if is only for TS
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+      }}
       bg="blackAlpha.900"
       color="white"
       flexDir="column"

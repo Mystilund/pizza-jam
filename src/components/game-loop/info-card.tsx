@@ -12,7 +12,7 @@ export const Infobox = ({ children, title, ...rest }: InfoboxProps) => (
   <Flex
     flexDir="column"
     h="200px"
-    w="30%"
+    w="31%"
     p="10px"
     border="1px solid"
     borderRadius={10}

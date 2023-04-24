@@ -377,3 +377,13 @@
     box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
 }
+
+@keyframes slidein {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 10px;
+  }
+}

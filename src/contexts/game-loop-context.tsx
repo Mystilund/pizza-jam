@@ -180,9 +180,13 @@ export const GameLoopProvider = ({ children }: GameLoopContextProps) => {
         ...configuration.game,
         ingredients: newIngredientList,
         money: floatRound(configuration.game.money + moneyEarned),
-        satisfaction: floatRound(
-          configuration.game.satisfaction + satisfactionEarned
-        ),
+        satisfaction: Math.max(
+          Math.min(
+            floatRound(configuration.game.satisfaction + satisfactionEarned),
+            100
+          ),
+          0
+        ), // Can't go below 0 or above 100
       },
     });
     setSummaryData({

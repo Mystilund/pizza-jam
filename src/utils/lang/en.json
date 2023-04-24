@@ -53,7 +53,7 @@
       "gameExplanation": {
         "button": "How do we play the game?",
         "title1": "Preparation",
-        "line1": "First, you need to be prepared. As explained in the ingredient window, you'll need to buy some resources to be able to cook your pizza. Depending the estimation of clients coming for the day and depending what are the recipes you have, you'll be able to buy the right ingredients and the right quantity.",
+        "line1": "First, you need to be prepared. <highlight>As explained in the ingredient window, you'll need to buy some resources to be able to cook your pizza</highlight>. Depending the estimation of clients coming for the day and depending what are the recipes you have, you'll be able to buy the right ingredients and the right quantity.",
         "title2": "Cook & serve clients",
         "line2": "Once you're sure you're prepared, you can click on the button at the bottom of the page behind this window.",
         "line3": "The clients will come, each with a specific request. The recipe will be displayed on the top right, you have your ingredients at the bottom. You need to click on the ingredient or press the corresponding key in the right order to make the pizza. If you put a wrong ingredient (including one in the recipe but it's not the next one), the client will be mad. You can do 2 errors, if you do a third one the client go away.",

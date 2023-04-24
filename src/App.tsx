@@ -89,7 +89,12 @@ const Jam = () => (
     <Divider my={1} />
     <Text>
       This game was made for the{' '}
-      <Link href="https://itch.io/jam/gamedevjs-2023" target="_blank">
+      <Link
+        href="https://itch.io/jam/gamedevjs-2023"
+        target="_blank"
+        color="orange.400"
+        textDecoration="underline"
+      >
         Gamedev.js Jam 2023
       </Link>
     </Text>

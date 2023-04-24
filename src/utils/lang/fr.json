@@ -53,7 +53,7 @@
       "gameExplanation": {
         "button": "Comment jouer au jeu ?",
         "title1": "Préparation",
-        "line1": "Tout d'abord, vous devez vous préparer. Comme expliqué dans la fenêtre ingrédient, vous devez acheter de quoi faire vos pizzas. Dépendamment l'estimation de clients venant ce jour et en fonction de vos recettes, vous pourrez acheter le bon nombre d'ingrédients et la bonne quantité.",
+        "line1": "Tout d'abord, vous devez vous préparer. <highlight>Comme expliqué dans la fenêtre ingrédient, vous devez acheter de quoi faire vos pizzas</highlight>. Dépendamment l'estimation de clients venant ce jour et en fonction de vos recettes, vous pourrez acheter le bon nombre d'ingrédients et la bonne quantité.",
         "title2": "Cuisiner et servir les clients",
         "line2": "Une fois que vous êtes sûr d'être prêt, vous pouvez cliquer sur le bouton en bas de la page derrière cette fenêtre.",
         "line3": "Les clients viendront, chacuns avec une requête précise. La recette est indiquée en haut à droite, vous avez vos ingrédients en bas. Vous devez cliquer sur les ingrédients ou appuyer sur la touche correspondante dans l'order pour faire la pizza. Si vous mettez le mauvais ingrédient (incluant ceux qui sont dans la recette mais qui n'est pas le suivant), le client sera faché. Vous pouvez faire 2 erreurs, si vous en faites une troisième le client partira.",

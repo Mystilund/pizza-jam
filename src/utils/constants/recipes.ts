@@ -189,8 +189,8 @@ export const pizzaPrices = Object.fromEntries(
       IngredientsPerRecipe[recipe].reduce((acc, ingredient) => {
         return acc + ingredientPrices[ingredient];
       }, 0) *
-        // multiplier by 1.4 if the pizza has 4 ingredients, 1.5 if 5, etc
-        (1 + IngredientsPerRecipe[recipe].length / 10)
+        // multiplier by 2.4 if the pizza has 4 ingredients, 2.5 if 5, etc
+        (2 + IngredientsPerRecipe[recipe].length / 10)
     ),
   ])
 ) as Record<Recipe, number>;

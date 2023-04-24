@@ -10,6 +10,7 @@ import { CDN_URL } from '../../../../utils/constants';
 import { Scene } from '../../../../utils/types';
 import { Coin, Heart } from '../../../icons/icons';
 import { ParallelogramBox } from '../../parallelogram-box';
+import { AnimatedArrow } from '../animated-arrow';
 import { ExpectationCard } from '../expectation-card';
 import { HelpCard } from '../help-card';
 
@@ -121,6 +122,9 @@ export const PreparationMainView = ({
         >
           {t('preparation.ingredientsButton')}
         </Button>
+        {!configuration.game.tutorial && (
+          <AnimatedArrow borderRightColor="orange.500" total={3} />
+        )}
         <ParallelogramBox
           ml="auto"
           Icon={Heart}

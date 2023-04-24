@@ -1,5 +1,6 @@
 import {
   Button,
+  chakra,
   Divider,
   Heading,
   Modal,
@@ -11,13 +12,24 @@ import {
   Text,
   useBoolean,
 } from '@chakra-ui/react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import { ScrollbarStyle } from '../../../theme/components/generic-style';
 
-export const GameExplanationModal = () => {
+type GameExplanationModalProps = {
+  onClose: VoidFunction;
+};
+
+export const GameExplanationModal = ({
+  onClose,
+}: GameExplanationModalProps) => {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useBoolean(false);
+
+  const closeModal = () => {
+    setIsModalOpen.off();
+    onClose();
+  };
 
   return (
     <>
@@ -31,7 +43,7 @@ export const GameExplanationModal = () => {
       </Button>
       <Modal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen.off()}
+        onClose={closeModal}
         size="xl"
         isCentered
         motionPreset="slideInRight"
@@ -57,7 +69,16 @@ export const GameExplanationModal = () => {
               {t('preparation.help.gameExplanation.title1')}
             </Heading>
             <Divider my={2} />
-            <Text>{t('preparation.help.gameExplanation.line1')}</Text>
+            <Text>
+              <Trans
+                i18nKey="preparation.help.gameExplanation.line1"
+                components={{
+                  highlight: (
+                    <chakra.span fontWeight="bold" color="orange.300" />
+                  ),
+                }}
+              />
+            </Text>
             <Heading mt="15px" fontSize="20px">
               {t('preparation.help.gameExplanation.title2')}
             </Heading>
@@ -75,7 +96,7 @@ export const GameExplanationModal = () => {
             <Text mt={2}>{t('preparation.help.gameExplanation.line8')}</Text>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="orange" onClick={() => setIsModalOpen.off()}>
+            <Button colorScheme="orange" onClick={closeModal}>
               {t('back')}
             </Button>
           </ModalFooter>

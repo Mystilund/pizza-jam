@@ -125,11 +125,9 @@ export const CookProvider = ({ children }: CookContextProps) => {
   }, [isGamePaused]);
 
   // The method calls when the game end, sending data to the upper context
-  // Game finish when :
-  // - There are no client anymore
-  // - The time is over
-  //
-  // If the game finish because of the time, the remaining clients are considered as skipped
+  // It's only used when the time is over because of issue with react
+  // Otherwise it would have been call on a last error, skip or success
+  // The remaining clients are considered as skipped
   const finishGame = useCallback(() => {
     setIsFinished.on();
     const clientsListCopy = [...clients];
@@ -187,7 +185,11 @@ export const CookProvider = ({ children }: CookContextProps) => {
     setCurrentIndex((x) => x + 1);
     setPizzaSuccess((x) => x + 1);
     if (currentIndex + 1 === clients.length) {
-      finishGame();
+      // Can't use finishGame() because it won't have the right client (we set the data below)
+      setIsFinished.on();
+      setTimeout(() => {
+        gameLoopFinishGame(usedIngredients, clients);
+      }, 5000);
     }
   };
 
@@ -202,7 +204,11 @@ export const CookProvider = ({ children }: CookContextProps) => {
       setClients(newClientData);
     }
     if (currentIndex + 1 === clients.length) {
-      finishGame();
+      // Can't use finishGame() because it won't have the right client (we set the data below)
+      setIsFinished.on();
+      setTimeout(() => {
+        gameLoopFinishGame(usedIngredients, newClientData);
+      }, 5000);
     }
   };
 

@@ -15,7 +15,8 @@ import { Configuration, Scene } from '../utils/types';
 //-- Types
 type GameContextProvider = {
   activeScene: Scene;
-  backScene: () => void;
+  backScene: VoidFunction;
+  readTutorial: VoidFunction;
   goToScene: (target: Scene, addToSceneOrder?: boolean) => void;
   configuration: Configuration;
   setConfiguration: (config: Configuration) => void;
@@ -30,6 +31,7 @@ type GameContextProps = {
 export const GameContext = createContext<GameContextProvider>({
   activeScene: Scene.MAIN_MENU,
   backScene: () => {},
+  readTutorial: () => {},
   goToScene: () => {},
   configuration: {} as Configuration,
   setConfiguration: () => {},
@@ -82,6 +84,17 @@ export const GameProvider = ({ children }: GameContextProps) => {
     // we don't add it to the list since the scene order is already up to date
     goToScene(lastScene, false);
   };
+  const readTutorial = () => {
+    if (configuration) {
+      setConfiguration({
+        ...configuration,
+        game: {
+          ...configuration.game,
+          tutorial: true,
+        },
+      });
+    }
+  };
 
   const providerParameters = {
     activeScene,
@@ -89,6 +102,7 @@ export const GameProvider = ({ children }: GameContextProps) => {
     goToScene,
     configuration: configuration as Configuration,
     setConfiguration,
+    readTutorial,
   };
 
   return (
